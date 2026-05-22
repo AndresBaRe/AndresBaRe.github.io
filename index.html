@@ -8,24 +8,16 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:Arial,sans-serif;background:#F5F0EF;color:#2C2C2A;min-height:100vh;padding:2rem 1rem;}
 .page{max-width:920px;margin:0 auto;}
-
-/* Header */
 .header{background:#8B1A1A;border-radius:12px;padding:1.25rem 1.75rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
 .header h1{font-size:15px;font-weight:700;color:#fff;}
 .header p{font-size:12px;color:#F5C0C0;margin-top:3px;}
 .logo{font-size:22px;font-weight:700;color:#fff;letter-spacing:-0.5px;flex-shrink:0;}
-
-/* Selectores */
 .selectors{background:#fff;border:0.5px solid #DDD8D8;border-radius:12px;padding:1.1rem 1.5rem;margin-bottom:1.1rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end;}
 .sel-group{display:flex;flex-direction:column;gap:4px;flex:1;min-width:200px;}
 .sel-group label{font-size:11px;text-transform:uppercase;letter-spacing:0.07em;color:#888;font-weight:700;}
 .sel-group select{font-size:13px;padding:8px 10px;border:0.5px solid #C8C0C0;border-radius:8px;background:#fff;color:#2C2C2A;cursor:pointer;}
 .sel-group select:focus{outline:2px solid #8B1A1A;outline-offset:1px;}
-
-/* Ficha */
 .ficha{background:#fff;border:0.5px solid #DDD8D8;border-radius:12px;overflow:hidden;}
-
-/* Encabezado */
 .fh{padding:1.25rem 1.75rem;border-bottom:0.5px solid #DDD8D8;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;}
 .fh-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px;}
 .tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;}
@@ -39,24 +31,21 @@ body{font-family:Arial,sans-serif;background:#F5F0EF;color:#2C2C2A;min-height:10
 .model{font-size:19px;font-weight:700;color:#8B1A1A;}
 .brand{font-size:11px;color:#999;margin-top:3px;}
 .config-lbl{font-size:11px;color:#C8C0C0;margin-top:2px;}
-
-/* Secciones */
 .secs{display:grid;grid-template-columns:1fr 1fr;}
 .sec{padding:1rem 1.5rem;border-right:0.5px solid #DDD8D8;border-bottom:0.5px solid #DDD8D8;}
 .sec.full{grid-column:1/-1;border-right:none;}
 .sec:nth-child(even):not(.full){border-right:none;}
 .sec-title{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:#999;font-weight:700;margin-bottom:9px;border-left:3px solid #8B1A1A;padding-left:7px;}
-.row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:4px 0;border-bottom:0.5px solid #F5F0EF;}
+.row{padding:5px 0;border-bottom:0.5px solid #F5F0EF;}
 .row:last-child{border-bottom:none;}
+.row-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
 .rl{font-size:12px;color:#666;flex-shrink:0;max-width:48%;}
 .rv{font-size:12px;font-weight:700;color:#2C2C2A;text-align:right;}
-
-/* Footer */
+.ref{font-size:10px;color:#AAAAAA;text-align:right;margin-top:1px;font-style:italic;}
 .ff{padding:.9rem 1.75rem;border-top:0.5px solid #DDD8D8;background:#FAF7F7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
 .ff span{font-size:11px;color:#999;}
-.btn-print{font-size:12px;padding:6px 14px;border:0.5px solid #C8C0C0;border-radius:8px;background:#fff;color:#8B1A1A;cursor:pointer;font-family:Arial,sans-serif;font-weight:700;border-color:#8B1A1A;}
+.btn-print{font-size:12px;padding:6px 14px;border:0.5px solid #8B1A1A;border-radius:8px;background:#fff;color:#8B1A1A;cursor:pointer;font-family:Arial,sans-serif;font-weight:700;}
 .btn-print:hover{background:#8B1A1A;color:#fff;}
-
 @media(max-width:600px){
   .secs{grid-template-columns:1fr;}
   .sec{border-right:none!important;}
@@ -70,6 +59,7 @@ body{font-family:Arial,sans-serif;background:#F5F0EF;color:#2C2C2A;min-height:10
   .ficha{border:1px solid #ccc;border-radius:0;}
   .sec{break-inside:avoid;}
   .page{max-width:100%;}
+  .ref{color:#999;}
 }
 </style>
 </head>
@@ -103,37 +93,42 @@ const DB = [
       {
         "label": "1ES15408-57 — Sin Rayos X",
         "config": "1ES15408-57",
-        "certs": "ISO 13485 · ISO 9001 · DoC UE · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
+        "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "La camilla está diseñada para la hospitalización de corta estancia en áreas como urgencias, cuidados ambulatorios y otras unidades similares. Su uso incluye el traslado interno de pacientes, el ajuste de posiciones para exploraciones, tratamientos, fisioterapia, descanso, movilización y cuidados rutinarios, así como brindar un entorno seguro para el paciente durante estos procedimientos. Además, busca facilitar el trabajo del personal de salud proporcionando condiciones adecuadas para la atención y manejo del paciente.",
+        "uso": "La camilla está diseñada para la hospitalización de corta estancia en áreas como urgencias, cuidados ambulatorios y otras unidades similares. Su uso incluye el traslado interno de pacientes, el ajuste de posiciones para exploraciones, tratamientos, fisioterapia, descanso, movilización y cuidados rutinarios, así como brindar un entorno seguro para el paciente durante estos procedimientos.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Camilla de transporte universal"
+                "Camilla de transporte universal",
+                ""
               ],
               [
                 "Modelo",
-                "Sprint 100"
+                "Sprint 100",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 13485 · ISO 9001 · DoC UE · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -142,51 +137,63 @@ const DB = [
             "campos": [
               [
                 "Dimensiones externas",
-                "211 × 76 cm"
+                "211 × 76 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Altura barandillas laterales sobre plataforma",
-                "3 cm (mín.) / 35.5 cm (máx.)"
+                "3 cm (mín.) / 35.5 cm (máx.)",
+                "Manual de usuario, página 18"
               ],
               [
                 "Longitud barandillas laterales",
-                "125 cm"
+                "125 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Dimensiones entre barrotes de barandillas",
-                "21 cm"
+                "21 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Dimensiones del colchón (superficie del paciente)",
-                "193 × 66 cm"
+                "193 × 66 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Diámetro de las ruedas",
-                "20 cm"
+                "20 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Altura máxima y mínima de la plataforma",
-                "56.5 cm – 89 cm"
+                "56.5 cm – 89 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Ángulo de respaldo",
-                "0° – 90°"
+                "0° – 90°",
+                "Manual de usuario, página 18"
               ],
               [
                 "Ángulo Trendelenburg",
-                "18°"
+                "18°",
+                "Manual de usuario, página 18"
               ],
               [
                 "Ángulo Anti-Trendelenburg",
-                "18°"
+                "18°",
+                "Manual de usuario, página 18"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "320 kg"
+                "320 kg",
+                "Manual de usuario, página 18"
               ],
               [
                 "Peso de la camilla",
-                "120 kg"
+                "120 kg",
+                "Manual de usuario, página 18"
               ]
             ]
           },
@@ -195,27 +202,53 @@ const DB = [
             "campos": [
               [
                 "Secciones del somier",
-                "Somier dividido en dos secciones"
+                "Somier dividido en dos secciones",
+                "Manual de usuario, página 22"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado, accionado a través de pedales en sección de cabeza y pies"
+                "Centralizado, accionado a través de pedales en sección de cabeza y pies",
+                "Manual de usuario, página 16, 20 y 27"
               ],
               [
                 "Manillas de conducción",
-                "Agarraderas fijas ubicadas en la sección de cabeza"
+                "Agarraderas fijas ubicadas en la sección de cabeza",
+                "Manual de usuario, página 50"
               ],
               [
                 "Cubierta del chasis inferior",
-                "Con espacio para almacenar botellas de oxígeno y objetos con altura máxima de 25 cm"
+                "Con espacio para almacenar botellas de oxígeno y objetos con altura máxima de 25 cm",
+                "Manual de usuario, página 44 y 45"
               ],
               [
                 "Capacidad de colocar accesorios",
-                "Con capacidad de colocar accesorios en las cuatro esquinas"
+                "Con capacidad de colocar accesorios en las cuatro esquinas",
+                "Manual de usuario, página 16 y 60"
+              ],
+              [
+                "Ganchos para accesorios",
+                "Soporte para accesorios en el lateral",
+                "Manual de usuario, página 41"
               ],
               [
                 "Rayos X",
-                "No aplica"
+                "N.A.",
+                ""
+              ]
+            ]
+          },
+          {
+            "titulo": "Colchón",
+            "campos": [
+              [
+                "Dimensiones",
+                "193 × 66 × 8 cm",
+                "Manual de usuario, página 73"
+              ],
+              [
+                "Especificaciones",
+                "Poliuretano con funda permeable al vapor, antideslizante, resistente a líquidos, cremallera 270° y resistente al fuego BS7175",
+                "Manual de usuario, página 8 y 73"
               ]
             ]
           },
@@ -224,19 +257,23 @@ const DB = [
             "campos": [
               [
                 "Barandillas",
-                "Polipropileno (PP) + acero lacado"
+                "Polipropileno (PP) + acero lacado",
+                "Manual de usuario, página 73"
               ],
               [
                 "Cubierta de la plataforma de apoyo",
-                "Laminado de alta presión (HPL)"
+                "Laminado de alta presión (HPL)",
+                "Manual de usuario, página 73"
               ],
               [
                 "Somier",
-                "Acero lacado"
+                "Acero lacado",
+                "Manual de usuario, página 73"
               ],
               [
                 "Ruedas",
-                "Polipropileno (PP)"
+                "Polipropileno (PP)",
+                "Manual de usuario, página 73"
               ]
             ]
           }
@@ -245,37 +282,42 @@ const DB = [
       {
         "label": "1ES15308-430 — Rayos X + IV&Drive",
         "config": "1ES15308-430",
-        "certs": "ISO 13485 · ISO 9001 · DoC UE · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
+        "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "La camilla está diseñada para la hospitalización de corta estancia en áreas como urgencias, cuidados ambulatorios y otras unidades similares. Su uso incluye el traslado interno de pacientes, el ajuste de posiciones para exploraciones, tratamientos, fisioterapia, descanso, movilización y cuidados rutinarios, así como brindar un entorno seguro para el paciente durante estos procedimientos. Además, busca facilitar el trabajo del personal de salud proporcionando condiciones adecuadas para la atención y manejo del paciente.",
+        "uso": "La camilla está diseñada para la hospitalización de corta estancia en áreas como urgencias, cuidados ambulatorios y otras unidades similares. Su uso incluye el traslado interno de pacientes, el ajuste de posiciones para exploraciones, tratamientos, fisioterapia, descanso, movilización y cuidados rutinarios, así como brindar un entorno seguro para el paciente durante estos procedimientos.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Camilla de transporte universal"
+                "Camilla de transporte universal",
+                ""
               ],
               [
                 "Modelo",
-                "Sprint 100"
+                "Sprint 100",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 13485 · ISO 9001 · DoC UE · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -284,51 +326,63 @@ const DB = [
             "campos": [
               [
                 "Dimensiones externas",
-                "211 × 76 cm"
+                "211 × 76 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Altura barandillas laterales sobre plataforma",
-                "3 cm (mín.) / 35.5 cm (máx.)"
+                "3 cm (mín.) / 35.5 cm (máx.)",
+                "Manual de usuario, página 18"
               ],
               [
                 "Longitud barandillas laterales",
-                "125 cm"
+                "125 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Dimensiones entre barrotes de barandillas",
-                "21 cm"
+                "21 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Dimensiones del colchón (superficie del paciente)",
-                "193 × 66 cm"
+                "193 × 66 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Diámetro de las ruedas",
-                "20 cm + 5ta rueda"
+                "20 cm + 5ta rueda",
+                "Manual de usuario, página 18 y 46"
               ],
               [
                 "Altura máxima y mínima de la plataforma",
-                "56.5 cm – 89 cm"
+                "56.5 cm – 89 cm",
+                "Manual de usuario, página 18"
               ],
               [
                 "Ángulo de respaldo",
-                "0° – 90°"
+                "0° – 90°",
+                "Manual de usuario, página 18"
               ],
               [
                 "Ángulo Trendelenburg",
-                "18°"
+                "18°",
+                "Manual de usuario, página 18"
               ],
               [
                 "Ángulo Anti-Trendelenburg",
-                "18°"
+                "18°",
+                "Manual de usuario, página 18"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "320 kg"
+                "320 kg",
+                "Manual de usuario, página 18"
               ],
               [
                 "Peso de la camilla",
-                "120 kg"
+                "120 kg",
+                "Manual de usuario, página 18"
               ]
             ]
           },
@@ -337,27 +391,53 @@ const DB = [
             "campos": [
               [
                 "Secciones del somier",
-                "Somier dividido en dos secciones"
+                "Somier dividido en dos secciones",
+                "Manual de usuario, página 22"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado, accionado a través de pedales en sección de cabeza y pies"
+                "Centralizado, accionado a través de pedales en sección de cabeza y pies",
+                "Manual de usuario, página 16, 20 y 27"
               ],
               [
                 "Manillas de conducción",
-                "Par de portasueros plegables que puede servir de asas para transportar la camilla cuando están levantados"
+                "Par de portasueros plegables que sirven de asas para transportar la camilla cuando están levantados",
+                "Manual de usuario, página 47"
               ],
               [
                 "Cubierta del chasis inferior",
-                "Con espacio para almacenar botellas de oxígeno y objetos con altura máxima de 25 cm"
+                "Con espacio para almacenar botellas de oxígeno y objetos con altura máxima de 25 cm",
+                "Manual de usuario, página 44 y 45"
               ],
               [
                 "Capacidad de colocar accesorios",
-                "Con capacidad de colocar accesorios en las cuatro esquinas"
+                "Con capacidad de colocar accesorios en las cuatro esquinas",
+                "Manual de usuario, página 16 y 60"
+              ],
+              [
+                "Ganchos para accesorios",
+                "Soporte para accesorios en el lateral",
+                "Manual de usuario, página 41"
               ],
               [
                 "Rayos X",
-                "Compatible con arco en C y con soporte con porta chasis radiográfico en sección de espalda y piernas"
+                "Compatible con arco en C y soporte con porta chasis radiográfico en sección de espalda y piernas",
+                "Manual de usuario, página 51 y 66"
+              ]
+            ]
+          },
+          {
+            "titulo": "Colchón",
+            "campos": [
+              [
+                "Dimensiones",
+                "193 × 66 × 8 cm",
+                "Manual de usuario, página 73"
+              ],
+              [
+                "Especificaciones",
+                "Poliuretano con funda permeable al vapor, antideslizante, resistente a líquidos, cremallera 270° y resistente al fuego BS7175",
+                "Manual de usuario, página 8 y 73"
               ]
             ]
           },
@@ -366,19 +446,23 @@ const DB = [
             "campos": [
               [
                 "Barandillas",
-                "Polipropileno (PP) + acero lacado"
+                "Polipropileno (PP) + acero lacado",
+                "Manual de usuario, página 73"
               ],
               [
                 "Cubierta de la plataforma de apoyo",
-                "Laminado de alta presión (HPL)"
+                "Laminado de alta presión (HPL)",
+                "Manual de usuario, página 73"
               ],
               [
                 "Somier",
-                "Acero lacado"
+                "Acero lacado",
+                "Manual de usuario, página 73"
               ],
               [
                 "Ruedas",
-                "Polipropileno (PP)"
+                "Polipropileno (PP)",
+                "Manual de usuario, página 73"
               ]
             ]
           }
@@ -394,36 +478,41 @@ const DB = [
         "label": "1SLAB-224 — Naranja",
         "config": "1SLAB-224",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "Silla reclinable de relajación para adultos, diseñada para hospitales y residencias de ancianos, que busca mejorar la comodidad, el bienestar y la atención del paciente. Permite ajustar posiciones para favorecer funciones fisiológicas como la circulación, la respiración, la digestión y la prevención de edemas y lesiones por presión. Además, contribuye al bienestar psicológico al promover la relajación, la interacción social y una mejor percepción personal. También apoya la movilización temprana y el aumento de la independencia del paciente en sus actividades cotidianas.",
+        "uso": "Silla reclinable de relajación para adultos, diseñada para hospitales y residencias de ancianos. Permite ajustar posiciones para favorecer funciones fisiológicas como la circulación, la respiración, la digestión y la prevención de edemas y lesiones por presión. Apoya la movilización temprana y el aumento de la independencia del paciente.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Silla multifuncional"
+                "Silla multifuncional",
+                ""
               ],
               [
                 "Modelo",
-                "Sella"
+                "Sella",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -432,47 +521,58 @@ const DB = [
             "campos": [
               [
                 "Longitud mínima en forma básica",
-                "91 cm"
+                "91 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Longitud total en posición acostada",
-                "163.5 cm"
+                "163.5 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Anchura total",
-                "68.5 cm – 70.5 cm"
+                "68.5 cm – 70.5 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Diámetro de las ruedas",
-                "12.5 cm"
+                "12.5 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Altura máxima y mínima de la plataforma",
-                "50.5 cm – 74.5 cm"
+                "50.5 cm – 74.5 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Ángulo de respaldo",
-                "12° – 70°"
+                "12° – 70°",
+                "Manual de usuario, página 45"
               ],
               [
                 "Ángulo del descansapiés",
-                "12° – 87°"
+                "12° – 87°",
+                "Manual de usuario, página 45"
               ],
               [
                 "Ángulo del apoyabrazos",
-                "-25°, 0°, 25°, 90°"
+                "-25°, 0°, 25°, 90°",
+                "Manual de usuario, página 45"
               ],
               [
                 "Ángulo de salida",
-                "0° – 25°"
+                "0° – 25°",
+                "Manual de usuario, página 45"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "150 kg"
+                "150 kg",
+                "Manual de usuario, página 45"
               ],
               [
                 "Peso de la silla",
-                "55 kg"
+                "55 kg",
+                "Manual de usuario, página 45"
               ]
             ]
           },
@@ -481,31 +581,38 @@ const DB = [
             "campos": [
               [
                 "Salida del paciente",
-                "Con mecanismo de ayuda: al presionar la palanca bilateral y pisar repetidamente el pedal de elevación, la silla se inclina hacia adelante y sube"
+                "Con mecanismo de ayuda: al presionar la palanca bilateral y pisar repetidamente el pedal de elevación, la silla se inclina hacia adelante y sube",
+                "Manual de usuario, página 32"
               ],
               [
                 "Apoyabrazos",
-                "Ajustables en diferentes ángulos"
+                "Ajustables en diferentes posiciones",
+                "Manual de usuario, página 30"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado a través de una palanca"
+                "Centralizado a través de un pedal",
+                "Manual de usuario, página 26"
               ],
               [
                 "Posicionamiento de la silla",
-                "Cambio de posición mediante muelle de gas integrado, manejado por palanca"
+                "Cambio de posición mediante muelle de gas integrado, manejado por palanca",
+                "Manual de usuario, página 29"
               ],
               [
                 "Reposapiés",
-                "Sirve como apoyo de pies al sentarse, durante el transporte y al subir o bajar de la silla"
+                "Sirve como apoyo de pies al sentarse, durante el transporte y al subir o bajar de la silla",
+                "Manual de usuario, página 31"
               ],
               [
                 "Capacidad de colocar accesorios",
-                "Con capacidad de colocar un portasueros en el lado derecho de la silla"
+                "Con capacidad de colocar un portasueros en el lado derecho de la silla",
+                "Manual de usuario, página 38"
               ],
               [
                 "Color de la tapicería",
-                "Naranja"
+                "Naranja",
+                ""
               ]
             ]
           },
@@ -514,7 +621,8 @@ const DB = [
             "campos": [
               [
                 "Bolsillo",
-                "Incluido"
+                "Bolsillo en la parte posterior",
+                "Manual de usuario, página 38"
               ]
             ]
           }
@@ -524,36 +632,41 @@ const DB = [
         "label": "1SLAB-459 — Azul",
         "config": "1SLAB-459",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "Silla reclinable de relajación para adultos, diseñada para hospitales y residencias de ancianos, que busca mejorar la comodidad, el bienestar y la atención del paciente. Permite ajustar posiciones para favorecer funciones fisiológicas como la circulación, la respiración, la digestión y la prevención de edemas y lesiones por presión. Además, contribuye al bienestar psicológico al promover la relajación, la interacción social y una mejor percepción personal. También apoya la movilización temprana y el aumento de la independencia del paciente en sus actividades cotidianas.",
+        "uso": "Silla reclinable de relajación para adultos, diseñada para hospitales y residencias de ancianos. Permite ajustar posiciones para favorecer funciones fisiológicas como la circulación, la respiración, la digestión y la prevención de edemas y lesiones por presión. Apoya la movilización temprana y el aumento de la independencia del paciente.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Silla multifuncional"
+                "Silla multifuncional",
+                ""
               ],
               [
                 "Modelo",
-                "Sella"
+                "Sella",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -562,47 +675,58 @@ const DB = [
             "campos": [
               [
                 "Longitud mínima en forma básica",
-                "91 cm"
+                "91 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Longitud total en posición acostada",
-                "163.5 cm"
+                "163.5 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Anchura total",
-                "68.5 cm – 70.5 cm"
+                "68.5 cm – 70.5 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Diámetro de las ruedas",
-                "12.5 cm"
+                "12.5 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Altura máxima y mínima de la plataforma",
-                "50.5 cm – 74.5 cm"
+                "50.5 cm – 74.5 cm",
+                "Manual de usuario, página 45"
               ],
               [
                 "Ángulo de respaldo",
-                "12° – 70°"
+                "12° – 70°",
+                "Manual de usuario, página 45"
               ],
               [
                 "Ángulo del descansapiés",
-                "12° – 87°"
+                "12° – 87°",
+                "Manual de usuario, página 45"
               ],
               [
                 "Ángulo del apoyabrazos",
-                "-25°, 0°, 25°, 90°"
+                "-25°, 0°, 25°, 90°",
+                "Manual de usuario, página 45"
               ],
               [
                 "Ángulo de salida",
-                "0° – 25°"
+                "0° – 25°",
+                "Manual de usuario, página 45"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "150 kg"
+                "150 kg",
+                "Manual de usuario, página 45"
               ],
               [
                 "Peso de la silla",
-                "55 kg"
+                "55 kg",
+                "Manual de usuario, página 45"
               ]
             ]
           },
@@ -611,31 +735,38 @@ const DB = [
             "campos": [
               [
                 "Salida del paciente",
-                "Con mecanismo de ayuda: al presionar la palanca bilateral y pisar repetidamente el pedal de elevación, la silla se inclina hacia adelante y sube"
+                "Con mecanismo de ayuda: al presionar la palanca bilateral y pisar repetidamente el pedal de elevación, la silla se inclina hacia adelante y sube",
+                "Manual de usuario, página 32"
               ],
               [
                 "Apoyabrazos",
-                "Ajustables en diferentes ángulos"
+                "Ajustables en diferentes posiciones",
+                "Manual de usuario, página 30"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado a través de una palanca"
+                "Centralizado a través de una palanca",
+                "Manual de usuario, página 26"
               ],
               [
                 "Posicionamiento de la silla",
-                "Cambio de posición mediante muelle de gas integrado, manejado por palanca"
+                "Cambio de posición mediante muelle de gas integrado, manejado por palanca",
+                "Manual de usuario, página 29"
               ],
               [
                 "Reposapiés",
-                "Sirve como apoyo de pies al sentarse, durante el transporte y al subir o bajar de la silla"
+                "Sirve como apoyo de pies al sentarse, durante el transporte y al subir o bajar de la silla",
+                "Manual de usuario, página 31"
               ],
               [
                 "Capacidad de colocar accesorios",
-                "Con capacidad de colocar un portasueros en el lado derecho de la silla"
+                "Con capacidad de colocar un portasueros en el lado derecho de la silla",
+                "Manual de usuario, página 38"
               ],
               [
                 "Color de la tapicería",
-                "Azul"
+                "Azul",
+                ""
               ]
             ]
           },
@@ -644,7 +775,8 @@ const DB = [
             "campos": [
               [
                 "Bolsillo",
-                "N.A."
+                "N.A.",
+                "-"
               ]
             ]
           }
@@ -660,36 +792,41 @@ const DB = [
         "label": "1ODAB-27",
         "config": "1ODAB-27",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "La silla está diseñada para apoyar procesos quirúrgicos y tratamientos médicos antes, durante y después de la intervención, incluyendo procedimientos no invasivos como endoscopias, tratamientos de pequeñas quemaduras, diálisis, oncología y donación de sangre. Sus funciones principales son proporcionar posiciones de descanso, sentado y soporte al paciente durante tratamientos prolongados, ofreciendo comodidad y una posición óptima mediante accesorios adecuados. Además, facilita el trabajo del personal médico y de enfermería durante la atención y los procedimientos.",
+        "uso": "La silla está diseñada para apoyar procesos quirúrgicos y tratamientos médicos antes, durante y después de la intervención, incluyendo procedimientos no invasivos como endoscopias, diálisis, oncología y donación de sangre. Proporciona posiciones de descanso y soporte durante tratamientos prolongados.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Silla multifuncional"
+                "Silla multifuncional",
+                ""
               ],
               [
                 "Modelo",
-                "Pura"
+                "Pura",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -698,67 +835,83 @@ const DB = [
             "campos": [
               [
                 "Longitud total",
-                "212.3 cm"
+                "212.3 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Longitud sección de respaldo",
-                "96.5 cm"
+                "96.5 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Longitud sección de asiento",
-                "52.8 cm"
+                "52.8 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Longitud sección de piernas",
-                "63 cm"
+                "63 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Anchura sección de respaldo",
-                "59 – 38.5 cm"
+                "59 – 38.5 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Anchura sección de asiento",
-                "59 cm"
+                "59 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Anchura sección de piernas",
-                "59 – 38.5 cm"
+                "59 – 38.5 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Altura mínima",
-                "59 cm"
+                "59 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Altura máxima",
-                "97 cm"
+                "97 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Diámetro de la rueda",
-                "150 cm"
+                "150 cm",
+                "Manual de usuario, página 79"
               ],
               [
                 "Ángulo de respaldo",
-                "0° ±1° / +70° ±2°"
+                "0° ±1° / +70° ±2°",
+                "Manual de usuario, página 80"
               ],
               [
                 "Ángulo de la sección de asiento",
-                "0° ±1° / -12° ±1°"
+                "0° ±1° / -12° ±1°",
+                "Manual de usuario, página 80"
               ],
               [
                 "Ángulo de la sección de piernas",
-                "0° ±1° / +33° ±2°"
+                "0° ±1° / +33° ±2°",
+                "Manual de usuario, página 80"
               ],
               [
                 "Ángulo de Trendelenburg",
-                "-12° ±1°"
+                "-12° ±1°",
+                "Manual de usuario, página 80"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "255 kg"
+                "255 kg",
+                "Manual de usuario, página 80"
               ],
               [
                 "Peso de la silla",
-                "113 kg"
+                "113 kg",
+                "Manual de usuario, página 80"
               ]
             ]
           },
@@ -767,7 +920,8 @@ const DB = [
             "campos": [
               [
                 "Batería de reserva",
-                "Pb AKU 2 × 12 V / 1.2 Ah"
+                "Pb AKU 2 × 12 V / 1.2 Ah",
+                "Manual de usuario, página 81"
               ]
             ]
           },
@@ -776,31 +930,38 @@ const DB = [
             "campos": [
               [
                 "Control",
-                "Control remoto con indicador de estado de batería e indicación de conexión a la red"
+                "Control remoto con indicador del estado de batería e indicación de conexión a la red",
+                "Manual de usuario, página 36"
               ],
               [
                 "Botón de Trendelenburg de emergencia",
-                "Incluido"
+                "Incluido",
+                "Manual de usuario, página 36"
               ],
               [
                 "Botones de posición",
-                "Posición horizontal y posición de montar"
+                "Posición horizontal y posición de montar",
+                "Manual de usuario, página 36"
               ],
               [
                 "Botones de parámetros",
-                "Ajuste de altura, reposapiés, pieza de espalda y piernas simultáneamente, pieza de piernas individual"
+                "Ajuste de altura, reposapiés, pieza de espalda y piernas simultáneamente, pieza de piernas individual",
+                "Manual de usuario, página 36"
               ],
               [
                 "Botón GO",
-                "Conecta el intervalo de tiempo (3 min) durante el cual se permiten otras funciones en el mando"
+                "Conecta el intervalo de tiempo (3 min) durante el cual se permiten otras funciones en el mando",
+                "Manual de usuario, página 35 y 36"
               ],
               [
                 "Botón Alto",
-                "Para todos los movimientos de la silla"
+                "Para todos los movimientos de la silla",
+                "Manual de usuario, página 35 y 36"
               ],
               [
                 "Posición de CPR",
-                "CPR mecánico a través de palanca roja"
+                "CPR mecánico a través de palanca roja",
+                "Manual de usuario, página 65"
               ]
             ]
           },
@@ -809,7 +970,8 @@ const DB = [
             "campos": [
               [
                 "Tapicería",
-                "Cumple normas BS EN 1021-1, BS EN 1021-2, BS 5852 — resistencia al foco de ignición 5"
+                "Cumple normas BS EN 1021-1, BS EN 1021-2, BS 5852 — resistencia al foco de ignición 5",
+                "Manual de usuario, página 72"
               ]
             ]
           }
@@ -825,36 +987,41 @@ const DB = [
         "label": "1GTL4627-226",
         "config": "1GTL4627-226",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "El equipo está diseñado para la hospitalización de pacientes en unidades de cuidados agudos y de larga estancia. Permite ajustar distintas posiciones para prevención, cuidados rutinarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación, contribuyendo al bienestar y recuperación del paciente. También proporciona un entorno seguro durante la atención médica, facilita el traslado interno del paciente encamado y ofrece condiciones adecuadas para que el personal de salud realice sus tareas de manera eficiente y segura.",
+        "uso": "El equipo está diseñado para la hospitalización de pacientes en unidades de cuidados agudos y de larga estancia. Permite ajustar distintas posiciones para prevención, cuidados rutinarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Facilita el traslado interno del paciente encamado y ofrece condiciones adecuadas para el personal de salud.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Cama de hospitalización"
+                "Cama de hospitalización",
+                ""
               ],
               [
                 "Modelo",
-                "Eleganza 1 LE"
+                "Eleganza 1 LE",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -863,55 +1030,68 @@ const DB = [
             "campos": [
               [
                 "Dimensiones",
-                "218 × 99.5 cm"
+                "218 × 99.5 cm",
+                "Manual de usuario, página 69"
               ],
               [
                 "Altura de la barandilla abatible",
-                "54.5 cm"
+                "54.5 cm",
+                "Manual de usuario, página 69"
               ],
               [
                 "Dimensiones de superficie del paciente",
-                "200 × 90 cm"
+                "200 × 90 cm",
+                "Manual de usuario, página 69"
               ],
               [
                 "Retroceso automático",
-                "10 cm / 6 cm"
+                "10 cm / 6 cm",
+                "Manual de usuario, página 69"
               ],
               [
                 "Altura ajustable de la plataforma del colchón",
-                "37 cm – 73.5 cm"
+                "37 cm – 73.5 cm",
+                "Manual de usuario, página 69"
               ],
               [
                 "Diámetro de las ruedas",
-                "12.5 cm"
+                "12.5 cm",
+                "Manual de usuario, página 69"
               ],
               [
                 "Ángulo de respaldo",
-                "0° – 70°"
+                "0° – 70°",
+                "Manual de usuario, página 69"
               ],
               [
                 "Ángulo Trendelenburg",
-                "15°"
+                "15°",
+                "Manual de usuario, página 69"
               ],
               [
                 "Ángulo Anti-Trendelenburg",
-                "15°"
+                "15°",
+                "Manual de usuario, página 69"
               ],
               [
                 "Ángulo del reposapiernas",
-                "35°"
+                "35°",
+                "Manual de usuario, página 69"
               ],
               [
                 "Ángulo del reposapies",
-                "21°"
+                "21°",
+                "Manual de usuario, página 69"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "250 kg"
+                "250 kg",
+                "Manual de usuario, página 69"
               ],
               [
                 "Peso de la cama",
-                "135 kg"
+                "135 kg",
+                "Manual de usuario, página 69"
               ]
             ]
           },
@@ -920,39 +1100,48 @@ const DB = [
             "campos": [
               [
                 "Plataforma de colchón",
-                "Formada por piezas de plástico desmontables"
+                "Formada por piezas de plástico desmontables",
+                "Manual de usuario, página 19 y 24"
               ],
               [
                 "Cabecero y piecero",
-                "Desmontables con palancas de seguridad situadas en los postes de las esquinas"
+                "Desmontables con palancas de seguridad en los postes de las esquinas",
+                "Manual de usuario, página 35 y 36"
               ],
               [
                 "Ajuste de sección de pies",
-                "De forma mecánica"
+                "De forma mecánica",
+                "Manual de usuario, página 46"
               ],
               [
                 "Barandillas",
-                "De plástico divididas abatibles"
+                "De plástico divididas abatibles",
+                "Manual de usuario, página 50"
               ],
               [
                 "Indicador de ángulo",
-                "Con indicador de ángulo en las barandillas"
+                "Con indicador de ángulo en las barandillas",
+                "Manual de usuario, página 19"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado con pedales en las ruedas de los pies"
+                "Centralizado con pedales en las ruedas de los pies",
+                "Manual de usuario, página 27 y 52"
               ],
               [
                 "Posición de CPR",
-                "A través de una palanca ubicada en la estructura del respaldo"
+                "A través de una palanca ubicada en la estructura del respaldo",
+                "Manual de usuario, página 45"
               ],
               [
                 "Parachoques",
-                "Con parachoques en las cuatro esquinas"
+                "Con parachoques en las cuatro esquinas",
+                "Manual de usuario, página 27"
               ],
               [
                 "Colocación de accesorios",
-                "Con capacidad de colocar accesorios en las cuatro esquinas"
+                "Con capacidad de colocar accesorios en las cuatro esquinas",
+                "Manual de usuario, página 54"
               ]
             ]
           },
@@ -961,23 +1150,28 @@ const DB = [
             "campos": [
               [
                 "Control",
-                "Mando con 10 botones y bloqueos de funciones, permite pulsar dos o más funciones a la vez"
+                "Mando con 10 botones y bloqueos de funciones, permite pulsar dos o más funciones a la vez",
+                "Manual de usuario, página 40"
               ],
               [
                 "Indicador de función activa",
-                "LED verde al pulsar un botón"
+                "LED verde al pulsar un botón",
+                "Manual de usuario, página 40"
               ],
               [
                 "Indicador LED de bloqueo y encendido",
-                "Incluido"
+                "Incluido",
+                "Manual de usuario, página 40"
               ],
               [
                 "Funciones del mando",
-                "Posición de respaldo, sección de piernas, autocontorno, ajuste de altura, Trendelenburg y Trendelenburg invertida"
+                "Posición de respaldo, sección de piernas, autocontorno, ajuste de altura, Trendelenburg y Trendelenburg invertida",
+                "Manual de usuario, página 40"
               ],
               [
                 "Bloqueo de funciones",
-                "A través de una llave"
+                "A través de una llave",
+                "Manual de usuario, página 42"
               ]
             ]
           },
@@ -986,7 +1180,8 @@ const DB = [
             "campos": [
               [
                 "Batería de reserva",
-                "Pb AKU 2 × 12 V / 1.2 Ah"
+                "Pb AKU 2 × 12 V / 1.2 Ah",
+                "Manual de usuario, página 72"
               ]
             ]
           },
@@ -995,19 +1190,23 @@ const DB = [
             "campos": [
               [
                 "Barandillas",
-                "Polipropileno (PP) + poliamida (PA) + acero lacado + ABS"
+                "Polipropileno (PP) + poliamida (PA) + acero lacado + ABS",
+                "Manual de usuario, página 60"
               ],
               [
                 "Cabecero y piecero",
-                "Polipropileno (PP) + acero lacado"
+                "Polipropileno (PP) + acero lacado",
+                "Manual de usuario, página 60"
               ],
               [
                 "Cubiertas de plataforma de apoyo",
-                "Polipropileno (PP)"
+                "Polipropileno (PP)",
+                "Manual de usuario, página 60"
               ],
               [
                 "Ruedas",
-                "Poliuretano (PUR) + polipropileno (PP)"
+                "Poliuretano (PUR) + polipropileno (PP)",
+                "Manual de usuario, página 61"
               ]
             ]
           }
@@ -1023,36 +1222,41 @@ const DB = [
         "label": "1EZ2-1031",
         "config": "1EZ2-1031",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "El equipo está destinado a la hospitalización de pacientes en unidades de cuidados agudos y de larga estancia, permitiendo ajustar posiciones para prevención, cuidados diarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Además, proporciona un entorno seguro para el paciente durante los procedimientos clínicos, facilita el transporte interno de pacientes encamados dentro del hospital y ofrece condiciones ergonómicas adecuadas para que el personal de salud realice sus actividades de atención y cuidado.",
+        "uso": "El equipo está destinado a la hospitalización de pacientes en unidades de cuidados agudos y de larga estancia, permitiendo ajustar posiciones para prevención, cuidados diarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Proporciona un entorno seguro y condiciones ergonómicas adecuadas para el personal de salud.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Cama de hospitalización"
+                "Cama de hospitalización",
+                ""
               ],
               [
                 "Modelo",
-                "Essenza 200"
+                "Essenza 200",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -1061,63 +1265,78 @@ const DB = [
             "campos": [
               [
                 "Dimensiones",
-                "221 × 99.5 cm"
+                "221 × 99.5 cm",
+                "Manual de usuario, página 29"
               ],
               [
                 "Longitud de las barandillas",
-                "Inferior: 100.5 cm / Superior: 48.5 cm"
+                "Inferior: 100.5 cm / Superior: 48.5 cm",
+                "Manual de usuario, página 29"
               ],
               [
                 "Altura de la barandilla abatible",
-                "40 cm"
+                "40 cm",
+                "Manual de usuario, página 29"
               ],
               [
                 "Extensión de la cama",
-                "15 cm"
+                "15 cm",
+                "Manual de usuario, página 29"
               ],
               [
                 "Dimensiones de superficie del paciente",
-                "200 × 90 cm"
+                "200 × 90 cm",
+                "Manual de usuario, página 29"
               ],
               [
                 "Retroceso automático (respaldo / reposapiernas)",
-                "3.5 cm / 2.5 cm"
+                "3.5 cm / 2.5 cm",
+                "Manual de usuario, página 29"
               ],
               [
                 "Altura ajustable de la plataforma del colchón",
-                "37 cm – 73.5 cm"
+                "37 cm – 73.5 cm",
+                "Manual de usuario, página 29"
               ],
               [
                 "Diámetro de las ruedas",
-                "12.5 cm"
+                "12.5 cm",
+                "Manual de usuario, página 29"
               ],
               [
                 "Ángulo de respaldo",
-                "0° – 70°"
+                "0° – 70°",
+                "Manual de usuario, página 29"
               ],
               [
                 "Ángulo Trendelenburg",
-                "15°"
+                "15°",
+                "Manual de usuario, página 29"
               ],
               [
                 "Ángulo Anti-Trendelenburg",
-                "15°"
+                "15°",
+                "Manual de usuario, página 29"
               ],
               [
                 "Ángulo del reposapiernas",
-                "35°"
+                "35°",
+                "Manual de usuario, página 29"
               ],
               [
                 "Ángulo del reposapies",
-                "22°"
+                "22°",
+                "Manual de usuario, página 29"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "250 kg"
+                "250 kg",
+                "Manual de usuario, página 30"
               ],
               [
                 "Peso de la cama",
-                "135 kg"
+                "135 kg",
+                "Manual de usuario, página 29"
               ]
             ]
           },
@@ -1126,43 +1345,53 @@ const DB = [
             "campos": [
               [
                 "Plataforma de colchón",
-                "Cuatro secciones"
+                "Cuatro secciones",
+                "Manual de usuario, página 44"
               ],
               [
                 "Cabecero y piecero",
-                "Desmontables con cierre de seguridad"
+                "Desmontables con cierre de seguridad",
+                "Manual de usuario, página 40 y 41"
               ],
               [
                 "Ajuste del reposapies",
-                "De forma mecánica"
+                "De forma mecánica",
+                "Manual de usuario, página 74"
               ],
               [
                 "Barandillas",
-                "De plástico divididas abatibles"
+                "De plástico divididas abatibles",
+                "Manual de usuario, página 54"
               ],
               [
                 "Indicador de ángulo",
-                "Con indicador de ángulo en las barandillas"
+                "Con indicador de ángulo en las barandillas",
+                "Manual de usuario, página 54"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado con pedales en las ruedas de los pies"
+                "Centralizado con pedales en las ruedas de los pies",
+                "Manual de usuario, página 61"
               ],
               [
                 "Posición de CPR",
-                "A través de una palanca ubicada debajo del reposapies"
+                "A través de una palanca debajo del reposapies y botón en el panel de control",
+                "Manual de usuario, página 64 y 84"
               ],
               [
                 "Parachoques",
-                "Fijos en las cuatro esquinas"
+                "Fijos en las cuatro esquinas",
+                "Manual de usuario, página 24"
               ],
               [
                 "Colocación de accesorios",
-                "Con capacidad de colocar accesorios en las cuatro esquinas"
+                "Con capacidad de colocar accesorios en las cuatro esquinas",
+                "Manual de usuario, página 24"
               ],
               [
                 "Extensión de la cama",
-                "Con cierres de seguridad"
+                "Con cierres de seguridad",
+                "Manual de usuario, página 82"
               ]
             ]
           },
@@ -1170,44 +1399,54 @@ const DB = [
             "titulo": "Control y movimientos",
             "campos": [
               [
-                "Control personal de enfermería",
-                "Mando integrado en la barandilla superior de la cama"
+                "Control de enfermería",
+                "Mando integrado en la barandilla superior de la cama",
+                "Manual de usuario, página 54"
               ],
               [
                 "Indicador de función activa",
-                "Con indicador de estado de batería e indicación de conexión a la red"
+                "Estado de batería e indicación de conexión a la red",
+                "Manual de usuario, página 64"
               ],
               [
                 "Función de bloqueo",
-                "Con botón de bloqueo de los movimientos"
+                "Con botón de bloqueo de los movimientos",
+                "Manual de usuario, página 64"
               ],
               [
                 "Funciones del mando enfermería",
-                "Trendelenburg, Trendelenburg invertida, ajuste de altura, respaldo, reposapiernas y autocontour"
+                "Trendelenburg, Trendelenburg invertida, ajuste de altura, respaldo, reposapiernas y autocontour",
+                "Manual de usuario, página 64"
               ],
               [
                 "Posición de silla cardiaca",
-                "Incluida"
+                "Incluida",
+                "Manual de usuario, página 64"
               ],
               [
                 "Botón de CPR",
-                "Incluido"
+                "Incluido",
+                "Manual de usuario, página 64"
               ],
               [
-                "Posición de Trendelenburg de emergencia",
-                "Incluida"
+                "Trendelenburg de emergencia",
+                "Incluida",
+                "Manual de usuario, página 64"
               ],
               [
                 "Botón Alto",
-                "Para todos los movimientos de la cama"
+                "Para todos los movimientos de la cama",
+                "Manual de usuario, página 64"
               ],
               [
                 "Control para paciente",
-                "Mando integrado en la parte interna de las barandillas"
+                "Mando integrado en la parte interna de las barandillas",
+                "Manual de usuario, página 67"
               ],
               [
                 "Funciones del mando paciente",
-                "Ajuste del respaldo y reposapiernas"
+                "Ajuste del respaldo y reposapiernas",
+                "Manual de usuario, página 67"
               ]
             ]
           },
@@ -1216,7 +1455,8 @@ const DB = [
             "campos": [
               [
                 "Batería de reserva",
-                "Pb AKU 2 × 12 V / 1.2 Ah"
+                "Pb AKU 2 × 12 V / 1.2 Ah",
+                "Manual de usuario, página 32"
               ]
             ]
           },
@@ -1225,19 +1465,23 @@ const DB = [
             "campos": [
               [
                 "Barandillas",
-                "Polipropileno (PP) + poliamida (PA) + acero lacado + ABS"
+                "Polipropileno (PP) + poliamida (PA) + acero lacado + ABS",
+                "Manual de usuario, página 111"
               ],
               [
                 "Cabecero y piecero",
-                "Polipropileno (PP)"
+                "Polipropileno (PP)",
+                "Manual de usuario, página 111"
               ],
               [
                 "Bastidor",
-                "Acero lacado + ABS"
+                "Acero lacado + ABS",
+                "Manual de usuario, página 111"
               ],
               [
                 "Ruedas",
-                "Poliuretano (PUR) + poliamida (PA) + polipropileno (PP)"
+                "Poliuretano (PUR) + poliamida (PA) + polipropileno (PP)",
+                "Manual de usuario, página 111"
               ]
             ]
           }
@@ -1253,36 +1497,41 @@ const DB = [
         "label": "1EZ30010-1002",
         "config": "1EZ30010-1002",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "El equipo está destinado a la hospitalización de pacientes en unidades de cuidados agudos y de larga estancia, permitiendo ajustar posiciones para prevención, cuidados diarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Además, proporciona un entorno seguro para el paciente durante los procedimientos clínicos, facilita el transporte interno de pacientes encamados dentro del hospital y ofrece condiciones ergonómicas adecuadas para que el personal de salud realice sus actividades de atención y cuidado.",
+        "uso": "El equipo está destinado a la hospitalización de pacientes en unidades de cuidados agudos y de larga estancia, permitiendo ajustar posiciones para prevención, cuidados diarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Proporciona un entorno seguro y condiciones ergonómicas adecuadas para el personal de salud.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Cama de hospitalización"
+                "Cama de hospitalización",
+                ""
               ],
               [
                 "Modelo",
-                "Essenza 300 LT"
+                "Essenza 300 LT",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -1291,67 +1540,83 @@ const DB = [
             "campos": [
               [
                 "Dimensiones",
-                "221 × 99.5 cm"
+                "221 × 99.5 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Longitud de las barandillas (sup. / inf.)",
-                "101.3 cm / 88.5 cm"
+                "101.3 cm / 88.5 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Altura de la barandilla abatible",
-                "42 cm"
+                "42 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Extensión de la cama",
-                "30 cm"
+                "30 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Dimensiones de superficie del paciente",
-                "200 × 90 cm"
+                "200 × 90 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Retroceso automático (respaldo / reposapiernas)",
-                "5 cm / 3 cm"
+                "5 cm / 3 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Altura ajustable de la plataforma del colchón",
-                "44.7 cm – 95.1 cm"
+                "44.7 cm – 95.1 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Diámetro de las ruedas",
-                "15 cm"
+                "15 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo de respaldo",
-                "0° – 70°"
+                "0° – 70°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo Trendelenburg",
-                "14°"
+                "14°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo Anti-Trendelenburg",
-                "14°"
+                "14°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo del reposapiernas",
-                "35°"
+                "35°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo del reposapies",
-                "25°"
+                "25°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo de inclinación lateral",
-                "15°"
+                "15°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "270 kg"
+                "270 kg",
+                "Manual de usuario, página 32"
               ],
               [
                 "Peso de la cama",
-                "180 kg"
+                "180 kg",
+                "Manual de usuario, página 32"
               ]
             ]
           },
@@ -1360,51 +1625,63 @@ const DB = [
             "campos": [
               [
                 "Plataforma de colchón",
-                "Cuatro secciones"
+                "Cuatro secciones",
+                "Manual de usuario, página 50"
               ],
               [
                 "Cabecero y piecero",
-                "Desmontables con seguro"
+                "Desmontables con seguro",
+                "Manual de usuario, página 41 y 42"
               ],
               [
                 "Ajuste del reposapies",
-                "De forma mecánica"
+                "De forma mecánica",
+                "Manual de usuario, página 92"
               ],
               [
                 "Barandillas",
-                "De plástico divididas abatibles"
+                "De plástico divididas abatibles",
+                "Manual de usuario, página 62"
               ],
               [
                 "Indicador de ángulo",
-                "Con indicador de ángulo en las barandillas"
+                "Con indicador de ángulo en las barandillas",
+                "Manual de usuario, página 62"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado con pedales en las ruedas de los pies"
+                "Centralizado con pedales en las ruedas de los pies",
+                "Manual de usuario, página 72"
               ],
               [
                 "Posición de CPR",
-                "A través de una palanca ubicada debajo del respaldo"
+                "A través de una palanca debajo del respaldo y botón en el panel de control",
+                "Manual de usuario, página 121"
               ],
               [
                 "Parachoques",
-                "Fijos en las cuatro esquinas"
+                "Fijos en las cuatro esquinas",
+                "Manual de usuario, página 27"
               ],
               [
                 "Colocación de accesorios",
-                "Con capacidad de colocar accesorios en las cuatro esquinas"
+                "Con capacidad de colocar accesorios en las cuatro esquinas",
+                "Manual de usuario, página 27"
               ],
               [
                 "Extensión de la cama",
-                "Con cierres de seguridad"
+                "Con cierres de seguridad",
+                "Manual de usuario, página 113"
               ],
               [
                 "Luz de noche",
-                "Con iluminación de cama (fuente de luz debajo de la sección de asiento)"
+                "Con iluminación de cama (fuente de luz debajo de la sección de asiento)",
+                "Manual de usuario, página 148"
               ],
               [
                 "Alarma de frenos",
-                "Señal sonora cuando la cama no está frenada"
+                "Señal sonora cuando la cama no está frenada",
+                "Manual de usuario, página 160"
               ]
             ]
           },
@@ -1412,64 +1689,79 @@ const DB = [
             "titulo": "Control y movimientos",
             "campos": [
               [
-                "Control personal de enfermería",
-                "Mando integrado en la barandilla superior de la cama"
+                "Control de enfermería",
+                "Mando integrado en la barandilla superior de la cama",
+                "Manual de usuario, página 62"
               ],
               [
                 "Indicador de función activa",
-                "Con indicador de estado de batería e indicación de conexión a la red"
+                "Estado de batería e indicación de conexión a la red",
+                "Manual de usuario, página 77"
               ],
               [
                 "Indicador LED de bloqueo del pedal",
-                "Incluido"
+                "Incluido",
+                "Manual de usuario, página 77"
               ],
               [
                 "Función de bloqueo",
-                "Con botón de bloqueo de los movimientos"
+                "Con botón de bloqueo de los movimientos",
+                "Manual de usuario, página 77"
               ],
               [
                 "Funciones del mando enfermería",
-                "Trendelenburg, Trendelenburg invertida, ajuste de altura, respaldo, reposapiernas y autocontour"
+                "Trendelenburg, Trendelenburg invertida, ajuste de altura, respaldo, reposapiernas y autocontour",
+                "Manual de usuario, página 77"
               ],
               [
                 "Posición de silla cardiaca",
-                "Con botón de posición de silla cardiaca"
+                "Con botón de posición de silla cardiaca",
+                "Manual de usuario, página 77"
               ],
               [
                 "Posición de movilización",
-                "Con botón de posición de movilización"
+                "Con botón de posición de movilización",
+                "Manual de usuario, página 77"
               ],
               [
                 "Inclinación lateral",
-                "Con botón de inclinación lateral (izquierda/derecha)"
+                "Con botón de inclinación lateral (izquierda/derecha)",
+                "Manual de usuario, página 77"
               ],
               [
                 "Botón de CPR",
-                "Incluido"
+                "Incluido",
+                "Manual de usuario, página 77"
               ],
               [
-                "Posición de Trendelenburg de emergencia",
-                "Incluida"
+                "Trendelenburg de emergencia",
+                "Incluida",
+                "Manual de usuario, página 77"
               ],
               [
                 "Botón Alto",
-                "Para todos los movimientos de la cama"
+                "Para todos los movimientos de la cama",
+                "Manual de usuario, página 77"
               ],
               [
                 "Control para paciente",
-                "Mando integrado en la parte interna de las barandillas"
+                "Mando integrado en la parte interna de las barandillas",
+                "Manual de usuario, página 80"
               ],
               [
                 "Funciones del mando paciente",
-                "Ajuste del respaldo, reposapiernas y altura de la cama"
+                "Ajuste del respaldo, reposapiernas y altura de la cama",
+                "Manual de usuario, página 80"
               ],
               [
                 "Control en los pedales",
-                "Pedales para controlar inclinación lateral (activar pulsando dos veces en dos segundos)"
+                "Pedales para inclinación lateral (activar pulsando dos veces en dos segundos)",
+                "Manual de usuario, página 81"
               ],
               [
                 "Funciones del pedal",
-                "Inclinación lateral izquierda, derecha y botón de RCP"
+                "Inclinación lateral izquierda, derecha y botón de RCP",
+                "Manual de usuario, página 81"
               ]
             ]
           },
@@ -1478,7 +1770,8 @@ const DB = [
             "campos": [
               [
                 "Batería de reserva",
-                "Pb AKU 2 × 12 V / 1.2 Ah"
+                "Pb AKU 2 × 12 V / 1.2 Ah",
+                "Manual de usuario, página 33"
               ]
             ]
           },
@@ -1487,19 +1780,23 @@ const DB = [
             "campos": [
               [
                 "Barandillas",
-                "Polipropileno (PP) + poliamida (PA) + acero lacado + ABS"
+                "Polipropileno (PP) + poliamida (PA) + acero lacado + ABS",
+                "Manual de usuario, página 181"
               ],
               [
                 "Cabecero y piecero",
-                "Polipropileno (PP)"
+                "Polipropileno (PP)",
+                "Manual de usuario, página 181"
               ],
               [
                 "Bastidor",
-                "Acero lacado"
+                "Acero lacado",
+                "Manual de usuario, página 181"
               ],
               [
                 "Ruedas",
-                "Poliuretano (PUR) + poliamida (PA) + polipropileno (PP)"
+                "Poliuretano (PUR) + poliamida (PA) + polipropileno (PP)",
+                "Manual de usuario, página 181"
               ]
             ]
           }
@@ -1515,36 +1812,41 @@ const DB = [
         "label": "1GE412055-2313",
         "config": "1GE412055-2313",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "El equipo está destinado a la hospitalización de pacientes en unidades de cuidados agudos y de larga estancia, permitiendo ajustar posiciones para prevención, cuidados diarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Además, proporciona un entorno seguro para el paciente durante los procedimientos clínicos, facilita el transporte interno de pacientes encamados dentro del hospital y ofrece condiciones ergonómicas adecuadas para que el personal de salud realice sus actividades de atención y cuidado.",
+        "uso": "El equipo está destinado a la hospitalización de pacientes en unidades de cuidados agudos y de larga estancia, permitiendo ajustar posiciones para prevención, cuidados diarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Proporciona un entorno seguro y condiciones ergonómicas adecuadas para el personal de salud.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Cama de posición adaptable para cuidados intensivos"
+                "Cama de posición adaptable para cuidados intensivos",
+                ""
               ],
               [
                 "Modelo",
-                "Eleganza 4"
+                "Eleganza 4",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -1553,59 +1855,73 @@ const DB = [
             "campos": [
               [
                 "Dimensiones",
-                "217.5 × 100 cm"
+                "217.5 × 100 cm",
+                "Manual de usuario, página 19"
               ],
               [
                 "Altura de la barandilla abatible",
-                "45 cm"
+                "45 cm",
+                "Manual de usuario, página 19"
               ],
               [
                 "Extensión de la cama",
-                "22 cm"
+                "22 cm",
+                "Manual de usuario, página 19"
               ],
               [
                 "Dimensiones de superficie del paciente",
-                "208 × 90 cm"
+                "208 × 90 cm",
+                "Manual de usuario, página 19"
               ],
               [
                 "Retroceso automático (respaldo / reposapiernas)",
-                "7.4 cm / 4 cm"
+                "7.4 cm / 4 cm",
+                "Manual de usuario, página 19"
               ],
               [
                 "Altura ajustable de la plataforma del colchón",
-                "41 cm – 79 cm"
+                "41 cm – 79 cm",
+                "Manual de usuario, página 19"
               ],
               [
                 "Diámetro de las ruedas",
-                "15 cm + 5ta rueda"
+                "15 cm + 5ta rueda",
+                "Manual de usuario, página 19"
               ],
               [
                 "Ángulo de respaldo",
-                "65°"
+                "65°",
+                "Manual de usuario, página 19"
               ],
               [
                 "Ángulo Trendelenburg",
-                "14°"
+                "14°",
+                "Manual de usuario, página 19"
               ],
               [
                 "Ángulo Anti-Trendelenburg",
-                "14°"
+                "14°",
+                "Manual de usuario, página 19"
               ],
               [
                 "Ángulo del reposapiernas",
-                "25°"
+                "25°",
+                "Manual de usuario, página 19"
               ],
               [
                 "Ángulo del reposapies",
-                "20°"
+                "20°",
+                "Manual de usuario, página 19"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "250 kg"
+                "250 kg",
+                "Manual de usuario, página 19"
               ],
               [
                 "Peso de la cama",
-                "195 kg"
+                "195 kg",
+                "Manual de usuario, página 19"
               ]
             ]
           },
@@ -1614,55 +1930,68 @@ const DB = [
             "campos": [
               [
                 "Plataforma de colchón",
-                "Cuatro secciones"
+                "Cuatro secciones",
+                "Manual de usuario, página 27"
               ],
               [
                 "Sistema de elevación",
-                "A través de columnas telescópicas"
+                "A través de columnas telescópicas",
+                "Manual de usuario, página 105"
               ],
               [
                 "Cabecero y piecero",
-                "Desmontables con bloqueo de seguridad"
+                "Desmontables con bloqueo de seguridad",
+                "Manual de usuario, página 27"
               ],
               [
                 "Ajuste del reposapies",
-                "De forma mecánica"
+                "De forma mecánica",
+                "Manual de usuario, página 51"
               ],
               [
                 "Barandillas",
-                "De plástico divididas abatibles"
+                "De plástico divididas abatibles",
+                "Manual de usuario, página 33"
               ],
               [
                 "Indicador de ángulo",
-                "Con indicador de ángulo en las barandillas"
+                "Con indicador de ángulo en las barandillas",
+                "Manual de usuario, página 33"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado con pedales en las ruedas de los pies"
+                "Centralizado con pedales en las ruedas de los pies",
+                "Manual de usuario, página 36"
               ],
               [
                 "Posición de CPR",
-                "A través de una palanca ubicada debajo del respaldo"
+                "A través de una palanca ubicada debajo del respaldo",
+                "Manual de usuario, página 36"
               ],
               [
                 "Parachoques",
-                "Fijos en las cuatro esquinas"
+                "Fijos en las cuatro esquinas",
+                "Manual de usuario, página 18"
               ],
               [
                 "Colocación de accesorios",
-                "Con capacidad de colocar accesorios en las dos esquinas superiores"
+                "Con capacidad de colocar accesorios en las dos esquinas superiores",
+                "Manual de usuario, página 89"
               ],
               [
                 "Extensión de la cama",
-                "Con pasadores de seguridad"
+                "Con pasadores de seguridad",
+                "Manual de usuario, página 61"
               ],
               [
                 "Rayos X",
-                "Respaldo translúcido para rayos X y con soporte para casetes situado bajo el lado izquierdo del respaldo"
+                "Respaldo translúcido para rayos X con soporte para casetes bajo el lado izquierdo del respaldo",
+                "Manual de usuario, página 79"
               ],
               [
                 "Báscula",
-                "Báscula clase III integrada con precisión de 0.5 kg"
+                "Báscula clase III integrada con precisión de 0.5 kg",
+                "Manual de usuario, página 15 y 19"
               ]
             ]
           },
@@ -1670,80 +1999,99 @@ const DB = [
             "titulo": "Control y movimientos",
             "campos": [
               [
-                "Control personal de enfermería",
-                "Panel de control integrado en la parte exterior de ambas barandillas del cabecero"
+                "Control de enfermería",
+                "Panel integrado en la parte exterior de ambas barandillas del cabecero",
+                "Manual de usuario, página 38"
               ],
               [
                 "Indicador de función activa",
-                "Con indicador de estado de batería e indicación de conexión a la red eléctrica"
+                "Estado de batería e indicación de conexión a la red",
+                "Manual de usuario, página 38"
               ],
               [
                 "Función de bloqueo",
-                "Con botón de bloqueo de los movimientos"
+                "Con botón de bloqueo de los movimientos",
+                "Manual de usuario, página 38"
               ],
               [
                 "Funciones del mando",
-                "Trendelenburg, Trendelenburg invertida, ajuste de altura, respaldo, reposapiernas y autocontour"
+                "Trendelenburg, Trendelenburg invertida, ajuste de altura, respaldo, reposapiernas y autocontour",
+                "Manual de usuario, página 38"
               ],
               [
                 "Posición de silla cardiaca",
-                "Con posición de silla cardiaca"
+                "Con posición de silla cardiaca",
+                "Manual de usuario, página 38"
               ],
               [
                 "Posición de movilización",
-                "Con botón de posición de movilización"
+                "Con botón de posición de movilización",
+                "Manual de usuario, página 38"
               ],
               [
                 "Botón de CPR",
-                "Con botón de CPR"
+                "Incluido",
+                "Manual de usuario, página 38"
               ],
               [
-                "Posición de Trendelenburg de emergencia",
-                "Con botón de posición de Trendelenburg de emergencia"
+                "Trendelenburg de emergencia",
+                "Con botón de posición de Trendelenburg de emergencia",
+                "Manual de usuario, página 38"
               ],
               [
                 "Botón Alto",
-                "Para todos los movimientos de la cama"
+                "Para todos los movimientos de la cama",
+                "Manual de usuario, página 39"
               ],
               [
                 "Botón GO",
-                "Activa el teclado de todos los elementos de control durante 3 minutos"
+                "Activa el teclado durante 3 minutos",
+                "Manual de usuario, página 38"
               ],
               [
                 "Control para paciente",
-                "Mando integrado en la parte interna de las barandillas"
+                "Mando integrado en la parte interna de las barandillas",
+                "Manual de usuario, página 47"
               ],
               [
                 "Funciones del mando paciente",
-                "Ajuste del respaldo, reposapiernas y contorno automático"
+                "Ajuste del respaldo, reposapiernas y contorno automático",
+                "Manual de usuario, página 47"
               ],
               [
                 "Control de pie",
-                "Con control de pie a través de pedal"
+                "A través de pedal",
+                "Manual de usuario, página 47"
               ],
               [
                 "Funciones del control de pie",
-                "Ajuste de altura y posición de reconocimiento"
+                "Ajuste de altura y posición de reconocimiento",
+                "Manual de usuario, página 47"
               ],
               [
-                "Control para báscula y monitorización",
-                "Integrado en la parte exterior de ambas barandillas del cabecero"
+                "Control de báscula y monitorización",
+                "Integrado en la parte exterior de ambas barandillas del cabecero",
+                "Manual de usuario, página 41"
               ],
               [
                 "Indicadores",
-                "Indicador de mantenimiento, indicador del ángulo de respaldo"
+                "Indicador de mantenimiento, indicador del ángulo de respaldo",
+                "Manual de usuario, página 41"
               ],
               [
-                "Pantalla",
-                "Pantalla que muestra el valor de peso en kg"
+                "Pantalla de báscula",
+                "Muestra el valor de peso en kg",
+                "Manual de usuario, página 41"
               ],
               [
                 "Funciones de báscula",
-                "Botón para congelar, botón para pesar/eliminar, cambio de intervalo (0.5/0.1 kg), botón de tara"
+                "Congelar, pesar/eliminar, cambio de intervalo (0.5/0.1 kg), tara",
+                "Manual de usuario, página 41"
               ],
               [
-                "Funciones de monitorización de paciente",
-                "Encender/apagar/pausar monitorización, monitorización de salida de cama zona interna/externa, ajuste de volumen en 3 niveles"
+                "Monitorización de paciente",
+                "Encender/apagar/pausar, monitorización de salida de cama zona interna/externa, ajuste de volumen en 3 niveles",
+                "Manual de usuario, página 41"
               ]
             ]
           },
@@ -1752,7 +2100,8 @@ const DB = [
             "campos": [
               [
                 "Batería de reserva",
-                "Pb AKU 2 × 12 V / 1.2 Ah"
+                "Pb AKU 2 × 12 V / 1.2 Ah",
+                "Manual de usuario, página 20"
               ]
             ]
           },
@@ -1761,19 +2110,23 @@ const DB = [
             "campos": [
               [
                 "Barandillas",
-                "Polipropileno (PP)"
+                "Polipropileno (PP)",
+                "Manual de usuario, página 103"
               ],
               [
                 "Cabecero y piecero",
-                "Polipropileno (PP)"
+                "Polipropileno (PP)",
+                "Manual de usuario, página 103"
               ],
               [
                 "Columnas",
-                "Aleación de aluminio oxidado"
+                "Aleación de aluminio oxidado",
+                "Manual de usuario, página 103"
               ],
               [
                 "Ruedas",
-                "Poliuretano (PUR) + polipropileno (PP)"
+                "Poliuretano (PUR) + polipropileno (PP)",
+                "Manual de usuario, página 103"
               ]
             ]
           }
@@ -1789,36 +2142,41 @@ const DB = [
         "label": "1MC17350-2245",
         "config": "1MC17350-2245",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "El equipo está diseñado para la hospitalización de pacientes en unidades de cuidados intensivos y agudos. Permite ajustar posiciones para prevención, cuidados rutinarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación, contribuyendo a la recuperación y bienestar del paciente. También proporciona un entorno seguro durante la atención médica, facilita el traslado interno de pacientes encamados y ofrece condiciones adecuadas para el trabajo del personal de salud. Además, en las versiones con báscula integrada, permite realizar una medición referencial del peso del paciente para apoyar la evaluación clínica y la administración de dieta y medicamentos.",
+        "uso": "El equipo está diseñado para la hospitalización de pacientes en unidades de cuidados intensivos y agudos. Permite ajustar posiciones para prevención, cuidados rutinarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Incluye báscula integrada para medición referencial del peso del paciente.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Cama de posición adaptable para cuidados intensivos"
+                "Cama de posición adaptable para cuidados intensivos",
+                ""
               ],
               [
                 "Modelo",
-                "Multicare"
+                "Multicare",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -1827,63 +2185,78 @@ const DB = [
             "campos": [
               [
                 "Dimensiones",
-                "215 × 105 cm"
+                "215 × 105 cm",
+                "Manual de usuario, página 24"
               ],
               [
                 "Altura de la barandilla abatible",
-                "45°"
+                "45°",
+                "Manual de usuario, página 24"
               ],
               [
                 "Longitud de los barandales",
-                "Sección de la cabeza: 54 cm / Sección central: 100 cm"
+                "Sección de la cabeza: 54 cm / Sección central: 100 cm",
+                "Manual de usuario, página 24"
               ],
               [
                 "Extensión de la cama",
-                "22 cm"
+                "22 cm",
+                "Manual de usuario, página 24"
               ],
               [
                 "Dimensiones de superficie del paciente",
-                "208 × 86 cm"
+                "208 × 86 cm",
+                "Manual de usuario, página 24"
               ],
               [
                 "Altura ajustable de la plataforma del colchón",
-                "44 cm – 82 cm"
+                "44 cm – 82 cm",
+                "Manual de usuario, página 24"
               ],
               [
                 "Diámetro de las ruedas",
-                "15 cm + 5ta rueda motorizada (21 cm de diámetro)"
+                "15 cm + 5ta rueda motorizada (21 cm de diámetro)",
+                "Manual de usuario, página 24"
               ],
               [
                 "Ángulo de respaldo",
-                "70°"
+                "70°",
+                "Manual de usuario, página 24"
               ],
               [
                 "Ángulo Trendelenburg",
-                "13°"
+                "13°",
+                "Manual de usuario, página 24"
               ],
               [
                 "Ángulo Anti-Trendelenburg",
-                "16°"
+                "16°",
+                "Manual de usuario, página 24"
               ],
               [
                 "Ángulo del reposapiernas",
-                "30°"
+                "30°",
+                "Manual de usuario, página 24"
               ],
               [
                 "Ángulo del reposapies",
-                "38°"
+                "38°",
+                "Manual de usuario, página 24"
               ],
               [
                 "Inclinación lateral",
-                "30°"
+                "30°",
+                "Manual de usuario, página 24"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "250 kg"
+                "250 kg",
+                "Manual de usuario, página 24"
               ],
               [
                 "Peso de la cama",
-                "224 kg"
+                "224 kg",
+                "Manual de usuario, página 24"
               ]
             ]
           },
@@ -1892,71 +2265,88 @@ const DB = [
             "campos": [
               [
                 "Plataforma de colchón",
-                "Cuatro secciones"
+                "Cuatro secciones",
+                "Manual de usuario, página 23"
               ],
               [
                 "Sistema de elevación",
-                "A través de columnas telescópicas"
+                "A través de columnas",
+                "Manual de usuario, página 37"
               ],
               [
                 "Cabecero y piecero",
-                "Desmontables"
+                "Desmontables",
+                "Manual de usuario, página 23"
               ],
               [
                 "Ajuste del reposapies",
-                "A través de botón en pantalla táctil LCD del cabecero"
+                "A través de botón en pantalla táctil LCD del cabecero",
+                "Manual de usuario, página 34"
               ],
               [
                 "Barandillas",
-                "De plástico divididas abatibles con resorte neumático"
+                "De plástico divididas abatibles con resorte neumático",
+                "Manual de usuario, página 57"
               ],
               [
-                "Indicadores de ángulo",
-                "Ángulo de inclinación longitudinal, lateral y de respaldo en pantalla táctil LCD del cabecero"
+                "Indicador de ángulo",
+                "Inclinación longitudinal, lateral y de respaldo en pantalla táctil LCD del cabecero",
+                "Manual de usuario, página 37"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado con pedales en ruedas de los pies y freno automático que se activa 60 segundos después de conectar la cama"
+                "Centralizado con pedales y freno automático que se activa 60 seg. después de conectar la cama",
+                "Manual de usuario, página 23 y 59"
               ],
               [
                 "Posición de CPR",
-                "A través de una palanca"
+                "A través de una palanca y CPR eléctrico",
+                "Manual de usuario, página 31 y 56"
               ],
               [
                 "Parachoques",
-                "Fijos en las cuatro esquinas"
+                "Fijos en las cuatro esquinas",
+                "Manual de usuario, página 23"
               ],
               [
                 "Colocación de accesorios",
-                "Con capacidad de colocar accesorios en las dos esquinas superiores"
+                "Con capacidad de colocar accesorios en las dos esquinas superiores",
+                "Manual de usuario, página 62"
               ],
               [
                 "Extensión de la cama",
-                "A través de botón en pantalla táctil LCD del cabecero"
+                "A través de botón en pantalla táctil LCD del cabecero",
+                "Manual de usuario, página 34"
               ],
               [
                 "Rayos X",
-                "Respaldo translúcido para rayos X y con soporte para casetes con dos perfiles en U bajo el respaldo"
+                "Respaldo translúcido con soporte para casetes con dos perfiles en U bajo el respaldo",
+                "Manual de usuario, página 60"
               ],
               [
                 "Arco en C",
-                "Respaldo y asiento translúcidos a los rayos X; diseño de columna permite intervenciones con arco en C"
+                "Respaldo y asiento translúcidos a los rayos X; diseño de columna permite intervenciones con arco en C",
+                "Manual de usuario, página 61"
               ],
               [
                 "5ta rueda motorizada",
-                "Ubicada en el centro de la cama, con batería y controles propios; velocidad máxima de avance 4.43 km/h"
+                "En el centro de la cama, con batería y controles propios; velocidad máxima 4.43 km/h",
+                "Manual de usuario, página 68 y 73"
               ],
               [
                 "Terapia Lateral Automática",
-                "Permite inclinación de la plataforma para optimizar función pulmonar y prevenir llagas por presión; configurable en ángulo y tiempo"
+                "Inclinación de la plataforma para optimizar función pulmonar y prevenir llagas por presión; configurable en ángulo y tiempo",
+                "Manual de usuario, página 49 y 50"
               ],
               [
                 "Báscula",
-                "Integrada con precisión de 0.5 kg"
+                "Integrada con precisión de 0.5 kg",
+                "Manual de usuario, página 14"
               ],
               [
                 "Brazo de apoyo para paciente",
-                "Con botón de ajuste de altura integrado para mayor seguridad al levantarse"
+                "Con botón de ajuste de altura integrado para mayor seguridad al levantarse",
+                "Manual de usuario, página 59"
               ]
             ]
           },
@@ -1965,63 +2355,73 @@ const DB = [
             "campos": [
               [
                 "Sistema de control",
-                "Panel múltiple con pantalla táctil LCD en ambas secciones de la cabeza de los barandales"
+                "Panel múltiple con pantalla táctil LCD en ambas secciones de la cabeza de los barandales",
+                "Manual de usuario, página 33"
               ],
               [
                 "Indicadores LED",
-                "Estado de batería e indicación de conexión a la red eléctrica"
+                "Estado de batería e indicación de conexión a la red",
+                "Manual de usuario, página 34"
               ],
               [
                 "Función de bloqueo",
-                "Con botón de bloqueo de los movimientos"
+                "Con botón de bloqueo de los movimientos",
+                "Manual de usuario, página 34"
               ],
               [
                 "Funciones del mando",
-                "Trendelenburg, Trendelenburg invertida, ajuste de respaldo, piernas, pies y extensión de la cama"
+                "Trendelenburg, Trendelenburg invertida, ajuste de respaldo, piernas, pies y extensión de la cama",
+                "Manual de usuario, página 34"
               ],
               [
                 "Posición de silla cardiaca",
-                "Con botón de posición de silla cardiaca"
+                "Con botón de posición de silla cardiaca",
+                "Manual de usuario, página 34"
               ],
               [
                 "Función de CPR",
-                "Con botón de función CPR"
+                "Con botón de función CPR",
+                "Manual de usuario, página 34"
               ],
               [
                 "Botón Alto",
-                "Para todos los movimientos de la cama"
+                "Para todos los movimientos de la cama",
+                "Manual de usuario, página 34"
               ],
               [
                 "Botón GO",
-                "Activa el teclado de todos los elementos de control durante 3 minutos"
+                "Activa el teclado durante 3 minutos",
+                "Manual de usuario, página 34"
               ],
               [
                 "Pantalla de posiciones",
-                "Posición de movilización, Trendelenburg, inclinación lateral y contorno automático"
+                "Movilización, Trendelenburg, inclinación lateral y contorno automático",
+                "Manual de usuario, página 34"
               ],
               [
-                "Indicadores en pantalla de posiciones",
-                "Indicador de mantenimiento, ángulo de respaldo, ángulo de inclinación lateral y longitudinal"
+                "Control alámbrico enfermería",
+                "Panel de supervisión para piecero con funciones completas de control",
+                "Manual de usuario, página 42"
               ],
               [
-                "Control alámbrico para enfermería",
-                "Panel de supervisión para colgar en el piecero con funciones de: sección de piernas/pies/bloqueo de extensión, ajuste de respaldo, bloqueo de altura/inclinación, ajuste de altura, posición de pies, extensión de plataforma, control de pie, inclinación longitudinal, posición cardiaca, botones ALT, Trendelenburg, CPR y GO"
-              ],
-              [
-                "Control alámbrico para paciente",
-                "Control de mano con iluminación; funciones de posición de piernas, respaldo, autocontorno, linterna, bloqueo de altura y ajuste de altura"
+                "Control alámbrico paciente",
+                "Control de mano con iluminación y funciones de posición",
+                "Manual de usuario, página 43"
               ],
               [
                 "Control para paciente",
-                "Mando integrado en la parte interna de las barandillas"
+                "Mando integrado en la parte interna de las barandillas",
+                "Manual de usuario, página 44"
               ],
               [
                 "Funciones del mando paciente",
-                "Ajuste del respaldo, reposapiernas y contorno automático"
+                "Ajuste del respaldo, reposapiernas y contorno automático",
+                "Manual de usuario, página 44"
               ],
               [
                 "Controles de pie",
-                "Dos controles de pie: 1° ajuste de altura y posición de reconocimiento; 2° inclinación lateral de la cama"
+                "Dos controles de pie: altura/posición de reconocimiento e inclinación lateral",
+                "Manual de usuario, página 44 y 45"
               ]
             ]
           },
@@ -2030,23 +2430,28 @@ const DB = [
             "campos": [
               [
                 "Control de báscula",
-                "Integrado en la parte exterior de ambas barandillas del cabecero"
+                "Integrado en la parte exterior de ambas barandillas del cabecero",
+                "Manual de usuario, página 33"
               ],
               [
                 "Pantalla de la báscula",
-                "Incluye: historial de mediciones, báscula estabilizada, peso actual, guardar peso, cambio de valor, puesta a cero/tara, congelar, peso/eliminar"
+                "Historial de mediciones, báscula estabilizada, peso actual, guardar peso, cambio de valor, tara, congelar, peso/eliminar",
+                "Manual de usuario, página 46"
               ],
               [
                 "Guardar peso del paciente",
-                "Permite guardar el peso diariamente; el historial aparece en gráfico de mediciones"
+                "Permite guardar el peso diariamente; el historial aparece en gráfico de mediciones",
+                "Manual de usuario, página 47 y 48"
               ],
               [
                 "Monitorización de paciente",
-                "Encender/apagar/pausar monitorización, monitorización de salida de cama zona interna/externa, ajuste de volumen en 3 niveles"
+                "Encender/apagar/pausar, monitorización de salida de cama zona interna/externa, ajuste de volumen en 3 niveles",
+                "Manual de usuario, página 53"
               ],
               [
                 "Función de traslado del paciente",
-                "Pantalla de transferencia que permite el traslado a camilla u otra cama mediante inclinación lateral con barras laterales plegadas"
+                "Pantalla de transferencia para traslado a camilla u otra cama mediante inclinación lateral",
+                "Manual de usuario, página 56"
               ]
             ]
           },
@@ -2055,7 +2460,8 @@ const DB = [
             "campos": [
               [
                 "Batería de reserva",
-                "Pb ACCU 2 × 12 V / 1.2 Ah / Fusible 15 A"
+                "Pb ACCU 2 × 12 V / 1.2 Ah / Fusible 15 A",
+                "Manual de usuario, página 25"
               ]
             ]
           },
@@ -2064,19 +2470,23 @@ const DB = [
             "campos": [
               [
                 "Barandillas",
-                "Polipropileno con superficie antibacteriana (PP)"
+                "Polipropileno con superficie antibacteriana (PP)",
+                "Manual de usuario, página 74"
               ],
               [
                 "Cabecero y piecero",
-                "Polipropileno con superficie antibacteriana (PP)"
+                "Polipropileno con superficie antibacteriana (PP)",
+                "Manual de usuario, página 74"
               ],
               [
                 "Columnas",
-                "Aleación de aluminio oxidado"
+                "Aleación de aluminio oxidado",
+                "Manual de usuario, página 74"
               ],
               [
                 "Ruedas",
-                "Polipropileno (PP)"
+                "Polipropileno (PP)",
+                "Manual de usuario, página 74"
               ]
             ]
           }
@@ -2092,36 +2502,41 @@ const DB = [
         "label": "1PPBA4-1328",
         "config": "1PPBA4-1328",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "La cama de parto está diseñada para las futuras madres que den a luz por parto vaginal. La cama de parto está diseñada para permitir diferentes posiciones en todas las fases del parto, incluido el periodo postparto.",
+        "uso": "La cama de parto está diseñada para las futuras madres que den a luz por parto vaginal. Permite diferentes posiciones en todas las fases del parto, incluido el periodo postparto.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Cama de partos"
+                "Cama de partos",
+                ""
               ],
               [
                 "Modelo",
-                "AVE2"
+                "AVE2",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -2130,59 +2545,73 @@ const DB = [
             "campos": [
               [
                 "Dimensiones",
-                "212.2 × 98 cm"
+                "212.2 × 98 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Longitud sin la sección de piernas",
-                "157 cm"
+                "157 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Dimensiones de superficie del paciente",
-                "205 × 89 cm"
+                "205 × 89 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Altura ajustable de la plataforma del colchón",
-                "60 cm – 105 cm"
+                "60 cm – 105 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Diámetro de las ruedas",
-                "15 cm"
+                "15 cm",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo de respaldo",
-                "-10° / +70°"
+                "-10° / +70°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo de la sección de asiento",
-                "18.5°"
+                "18.5°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Ángulo Trendelenburg",
-                "-10°"
+                "-10°",
+                "Manual de usuario, página 32"
               ],
               [
                 "Velocidad de la carrera arriba (máx. carga)",
-                "11.25 mm/s"
+                "11.25 mm/s",
+                "Manual de usuario, página 32"
               ],
               [
                 "Velocidad de la carrera abajo (máx. carga)",
-                "20.45 mm/s"
+                "20.45 mm/s",
+                "Manual de usuario, página 32"
               ],
               [
-                "Carga permitida de la sección de espalda",
-                "150 kg"
+                "Carga permitida sección de espalda",
+                "150 kg",
+                "Manual de usuario, página 33"
               ],
               [
-                "Carga permitida de la sección de piernas",
-                "150 kg"
+                "Carga permitida sección de piernas",
+                "150 kg",
+                "Manual de usuario, página 33"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "255 kg"
+                "255 kg",
+                "Manual de usuario, página 32"
               ],
               [
                 "Peso de la cama",
-                "245 kg"
+                "245 kg",
+                "Manual de usuario, página 32"
               ]
             ]
           },
@@ -2191,31 +2620,38 @@ const DB = [
             "campos": [
               [
                 "Cabecero",
-                "Desarmable"
+                "Desarmable",
+                "Manual de usuario, página 73"
               ],
               [
                 "Barandillas",
-                "Barandal lateral reclinable"
+                "Barandal lateral reclinable",
+                "Manual de usuario, página 75"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado con pedales ubicados en los laterales de la cama"
+                "Centralizado con pedales ubicados en los laterales de la cama",
+                "Manual de usuario, página 27 y 42"
               ],
               [
                 "Posición de CPR",
-                "A través de una palanca ubicada debajo del respaldo"
+                "A través de una palanca ubicada debajo del respaldo",
+                "Manual de usuario, página 27 y 47"
               ],
               [
                 "Colocación de accesorios",
-                "Con capacidad de colocar portasueros en las dos esquinas del cabecero"
+                "Con capacidad de colocar portasueros en las dos esquinas del cabecero",
+                "Manual de usuario, página 27"
               ],
               [
                 "Sección de asiento",
-                "Ajustable en las siguientes posiciones mediante dispositivo de mando: inclinación/reclinación, subida/bajada e inserción/sacamiento"
+                "Ajustable: inclinación/reclinación, subida/bajada e inserción/sacamiento mediante dispositivo de mando",
+                "Manual de usuario, página 50"
               ],
               [
                 "Apoyapiernas",
-                "No desmontables, ajustables mediante dispositivo de mando: abatimiento/reclinación de bandeja, giro al lado, inclinación y ajuste de altura de bandeja"
+                "No desmontables, ajustables: abatimiento/reclinación, giro, inclinación y ajuste de altura de bandeja",
+                "Manual de usuario, página 54"
               ]
             ]
           },
@@ -2224,47 +2660,58 @@ const DB = [
             "campos": [
               [
                 "Panel de control",
-                "Panel fijo de mando ubicado por los dos lados de la cama"
+                "Panel fijo de mando ubicado por los dos lados de la cama",
+                "Manual de usuario, página 46"
               ],
               [
                 "Indicador de función activa",
-                "Con indicador de estado de batería e indicación de conexión a la red eléctrica"
+                "Estado de batería e indicación de conexión a la red",
+                "Manual de usuario, página 46"
               ],
               [
                 "Función de bloqueo",
-                "Con botón de bloqueo de los movimientos"
+                "Con botón de bloqueo de los movimientos",
+                "Manual de usuario, página 46"
               ],
               [
                 "Funciones del mando",
-                "Ajuste de altura, ajuste de respaldo y ajuste de la sección del asiento"
+                "Ajuste de altura, ajuste de respaldo y ajuste de la sección del asiento",
+                "Manual de usuario, página 46"
               ],
               [
                 "Botón de CPR",
-                "Con botón de CPR"
+                "Incluido",
+                "Manual de usuario, página 46"
               ],
               [
-                "Posición de Trendelenburg de emergencia",
-                "Con botón de posición de Trendelenburg de emergencia (posición antichoque)"
+                "Trendelenburg de emergencia",
+                "Con botón de posición de Trendelenburg de emergencia (posición antichoque)",
+                "Manual de usuario, página 46"
               ],
               [
                 "Botón Alto",
-                "Para todos los movimientos de la cama"
+                "Para todos los movimientos de la cama",
+                "Manual de usuario, página 46"
               ],
               [
                 "Botón de iluminación",
-                "Botón de iluminación del fondo de la cama"
+                "Botón de iluminación del fondo de la cama",
+                "Manual de usuario, página 46"
               ],
               [
                 "Control para paciente",
-                "Dispositivo de mando manual por cable"
+                "Dispositivo de mando manual por cable",
+                "Manual de usuario, página 69"
               ],
               [
                 "Funciones del mando paciente",
-                "Ajuste del respaldo, altura de la cama y ajuste del asiento"
+                "Ajuste del respaldo, altura de la cama y ajuste del asiento",
+                "Manual de usuario, página 69"
               ],
               [
                 "Indicador del mando paciente",
-                "Con indicador de la conexión con la red eléctrica"
+                "Con indicador de conexión con la red eléctrica",
+                "Manual de usuario, página 69"
               ]
             ]
           },
@@ -2273,7 +2720,8 @@ const DB = [
             "campos": [
               [
                 "Batería de reserva",
-                "24 V / 2.3 Ah"
+                "24 V / 2.3 Ah",
+                "Manual de usuario, página 33"
               ]
             ]
           },
@@ -2281,8 +2729,9 @@ const DB = [
             "titulo": "Colchón",
             "campos": [
               [
-                "Especificaciones técnicas",
-                "Espuma de poliuretano con funda 100% poliéster en la base y 100% poliuretano en el revestimiento, impermeable con resistencia contra ignición según BS 7177"
+                "Especificaciones",
+                "Espuma de poliuretano con funda 100% poliéster en la base y 100% poliuretano en el revestimiento, impermeable, resistencia contra ignición según BS 7177",
+                "Manual de usuario, página 11 y 34"
               ]
             ]
           },
@@ -2291,7 +2740,8 @@ const DB = [
             "campos": [
               [
                 "Accesorios incluidos",
-                "Barra de apoyo, cubeta deslizante de acero inoxidable de 3.5 L, portasueros telescópico, reposacabezas y silla médica de altura regulable"
+                "Barra de apoyo, cubeta deslizante de acero inoxidable de 3.5 L, portasueros telescópico, reposacabezas y silla médica de altura regulable",
+                "Manual de usuario, página 78 y 79"
               ]
             ]
           },
@@ -2300,15 +2750,18 @@ const DB = [
             "campos": [
               [
                 "Cabecero y barandillas",
-                "Aluminio lacado, espuma de poliuretano (PUR), acero lacado"
+                "Aluminio lacado, espuma de poliuretano (PUR), acero lacado",
+                "Manual de usuario, página 89"
               ],
               [
                 "Columnas",
-                "Aleación de aluminio anodizado / Aleación de aluminio anodizado lacado"
+                "Aleación de aluminio anodizado / Aleación de aluminio anodizado lacado",
+                "Manual de usuario, página 89"
               ],
               [
                 "Ruedas",
-                "Poliuretano (PUR) + poliamida (PA) + polipropileno (PP)"
+                "Poliuretano (PUR) + poliamida (PA) + polipropileno (PP)",
+                "Manual de usuario, página 89"
               ]
             ]
           }
@@ -2324,36 +2777,41 @@ const DB = [
         "label": "1K40B611-336",
         "config": "1K40B611-336",
         "certs": "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
-        "cofepris": "No requiere de registro sanitario",
         "fab": "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
-        "uso": "El equipo está diseñado para la hospitalización de pacientes en unidades de cuidados pediátricos, permitiendo ajustar posiciones para prevención, cuidados rutinarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. También proporciona un entorno seguro durante la atención médica, facilita el traslado interno del paciente en cama y ofrece condiciones adecuadas para que el personal de salud realice sus actividades de cuidado y atención de manera eficiente y segura.",
+        "uso": "El equipo está diseñado para la hospitalización de pacientes en unidades de cuidados pediátricos, permitiendo ajustar posiciones para prevención, cuidados rutinarios, tratamientos, movilización, fisioterapia, exploraciones, descanso y relajación. Proporciona un entorno seguro durante la atención médica.",
         "secciones": [
           {
             "titulo": "Identificación general",
             "campos": [
               [
                 "Nombre genérico",
-                "Cama pediátrica para hospitales"
+                "Cama pediátrica para hospitales",
+                ""
               ],
               [
                 "Modelo",
-                "Tom 2"
+                "Tom 2",
+                ""
               ],
               [
                 "Marca",
-                "Linet"
+                "Linet",
+                ""
               ],
               [
                 "Fabricante",
-                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa"
+                "LINET spol. s r.o., Želevčice 5, 274 01 Slaný, República Checa",
+                ""
               ],
               [
                 "Certificaciones",
-                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta"
+                "ISO 9001 · ISO 14001 · ISO 13485 · Certificado de Libre Venta",
+                ""
               ],
               [
                 "Clase de riesgo COFEPRIS",
-                "No requiere de registro sanitario"
+                "No requiere de registro sanitario",
+                ""
               ]
             ]
           },
@@ -2362,51 +2820,63 @@ const DB = [
             "campos": [
               [
                 "Dimensiones",
-                "151 × 83 cm"
+                "151 × 83 cm",
+                "Manual de usuario, página 26"
               ],
               [
                 "Dimensiones de la barandilla (longitud × altura)",
-                "136.5 × 90 cm"
+                "136.5 × 90 cm",
+                "Manual de usuario, página 26"
               ],
               [
                 "Distancia entre barrotes de las barandillas",
-                "4.1 cm"
+                "4.1 cm",
+                "Manual de usuario, página 26"
               ],
               [
                 "Dimensiones de superficie del paciente",
-                "137 × 70 cm"
+                "137 × 70 cm",
+                "Manual de usuario, página 26"
               ],
               [
                 "Autorregresión (respaldo / reposapiernas)",
-                "12.5 cm / 0 cm"
+                "12.5 cm / 0 cm",
+                "Manual de usuario, página 26"
               ],
               [
                 "Altura ajustable de la plataforma del colchón",
-                "61.4 cm – 86.4 cm"
+                "61.4 cm – 86.4 cm",
+                "Manual de usuario, página 26"
               ],
               [
                 "Diámetro de las ruedas",
-                "12.5 cm"
+                "12.5 cm",
+                "Manual de usuario, página 26"
               ],
               [
                 "Ángulo de respaldo",
-                "41°"
+                "41°",
+                "Manual de usuario, página 26"
               ],
               [
                 "Ángulo Trendelenburg",
-                "15°"
+                "15°",
+                "Manual de usuario, página 26"
               ],
               [
                 "Ángulo Anti-Trendelenburg",
-                "15°"
+                "15°",
+                "Manual de usuario, página 26"
               ],
               [
                 "Carga segura de trabajo (SWL)",
-                "80 kg"
+                "80 kg",
+                "Manual de usuario, página 26"
               ],
               [
                 "Peso de la cama",
-                "120 kg"
+                "120 kg",
+                "Manual de usuario, página 26"
               ]
             ]
           },
@@ -2415,31 +2885,38 @@ const DB = [
             "campos": [
               [
                 "Plataforma de colchón",
-                "Dos secciones (respaldo y del pie)"
+                "Dos secciones (respaldo y del pie)",
+                "Manual de usuario, página 34"
               ],
               [
                 "Cabecero y piecero",
-                "Desmontables con bloqueo de seguridad"
+                "Desmontables con bloqueo de seguridad",
+                "Manual de usuario, página 37"
               ],
               [
                 "Barandillas",
-                "Telescópicas con bloqueos en 5 posiciones"
+                "Telescópicas con bloqueos en 5 posiciones",
+                "Manual de usuario, página 55 y 57"
               ],
               [
                 "Sistema de frenado",
-                "Centralizado con pedales en las ruedas de los pies"
+                "Centralizado con pedales en las ruedas de los pies",
+                "Manual de usuario, página 25 y 60"
               ],
               [
                 "Posición de CPR",
-                "A través de una palanca ubicada debajo del armazón, junto al cabecero"
+                "A través de una palanca ubicada debajo del armazón, junto al cabecero",
+                "Manual de usuario, página 49"
               ],
               [
                 "Parachoques",
-                "Fijos en las cuatro esquinas"
+                "Fijos en las cuatro esquinas",
+                "Manual de usuario, página 25"
               ],
               [
                 "Colocación de accesorios",
-                "Con capacidad de colocar accesorios en las dos esquinas superiores"
+                "Con capacidad de colocar accesorios en las dos esquinas superiores",
+                "Manual de usuario, página 68"
               ]
             ]
           },
@@ -2447,28 +2924,34 @@ const DB = [
             "titulo": "Control y movimientos",
             "campos": [
               [
-                "Control personal de enfermería",
-                "Panel de control ubicado en el extremo del pie de la cama"
+                "Control de enfermería",
+                "Panel de control ubicado en el extremo del pie de la cama",
+                "Manual de usuario, página 45"
               ],
               [
                 "Indicador de función activa",
-                "Con indicador de estado de batería e indicación de conexión a la red eléctrica"
+                "Estado de batería e indicación de conexión a la red",
+                "Manual de usuario, página 45"
               ],
               [
                 "Función de bloqueo",
-                "Con botón de bloqueo de los movimientos a través de una llave portátil"
+                "Con botón de bloqueo de los movimientos a través de una llave portátil",
+                "Manual de usuario, página 45 y 46"
               ],
               [
                 "Funciones del mando",
-                "Trendelenburg, Trendelenburg invertida, ajuste de altura y ajuste de respaldo"
+                "Trendelenburg, Trendelenburg invertida, ajuste de altura y ajuste de respaldo",
+                "Manual de usuario, página 45"
               ],
               [
                 "Botón Alto",
-                "Para todos los movimientos de la cama"
+                "Para todos los movimientos de la cama",
+                "Manual de usuario, página 45"
               ],
               [
                 "Botón GO",
-                "Activa el teclado de todos los elementos de control durante 3 minutos"
+                "Activa el teclado durante 3 minutos",
+                "Manual de usuario, página 45"
               ]
             ]
           },
@@ -2477,7 +2960,8 @@ const DB = [
             "campos": [
               [
                 "Batería de reserva",
-                "Pb 2 × 12 V / 1.2 Ah"
+                "Pb 2 × 12 V / 1.2 Ah",
+                "Manual de usuario, página 27"
               ]
             ]
           },
@@ -2486,19 +2970,23 @@ const DB = [
             "campos": [
               [
                 "Barandillas",
-                "Aleación de aluminio oxidado + acero lacado + poliamida (PA)"
+                "Aleación de aluminio oxidado + acero lacado + poliamida (PA)",
+                "Manual de usuario, página 72"
               ],
               [
                 "Cabecero y piecero",
-                "Aleación de aluminio oxidado + acero lacado + policarbonato (PC)"
+                "Aleación de aluminio oxidado + acero lacado + policarbonato (PC)",
+                "Manual de usuario, página 72"
               ],
               [
                 "Columnas",
-                "Aleación de aluminio oxidado + polioximetileno (POM)"
+                "Aleación de aluminio oxidado + polioximetileno (POM)",
+                "Manual de usuario, página 72"
               ],
               [
                 "Ruedas",
-                "Poliuretano (PUR) + polipropileno (PP)"
+                "Poliuretano (PUR) + polipropileno (PP)",
+                "Manual de usuario, página 72"
               ]
             ]
           }
@@ -2507,7 +2995,6 @@ const DB = [
     ]
   }
 ];
-
 function fillProds(){
   const sp=document.getElementById('sel-prod');
   sp.innerHTML=DB.map((p,i)=>`<option value="${i}">${p.modelo} — ${p.nombre}</option>`).join('');
@@ -2527,7 +3014,10 @@ function render(){
   const total=ver.secciones.length;
   const secsHtml=ver.secciones.map((sec,idx)=>{
     const full=(idx===total-1 && total%2!==0)?' full':'';
-    const filas=sec.campos.map(c=>`<div class="row"><span class="rl">${c[0]}</span><span class="rv">${c[1]}</span></div>`).join('');
+    const filas=sec.campos.map(c=>{
+      const ref = c[2] && c[2]!=='-' && c[2]!=='' ? `<div class="ref">${c[2]}</div>` : '';
+      return `<div class="row"><div class="row-top"><span class="rl">${c[0]}</span><span class="rv">${c[1]}</span></div>${ref}</div>`;
+    }).join('');
     return `<div class="sec${full}"><div class="sec-title">${sec.titulo}</div>${filas}</div>`;
   }).join('');
   document.getElementById('ficha').innerHTML=`
