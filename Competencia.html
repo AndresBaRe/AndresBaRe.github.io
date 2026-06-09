@@ -1368,35 +1368,47 @@
     <div class="ai-panel">
       <div class="ai-intro">
         <h2>🤖 Asistente de Ventas Linet</h2>
-        <p>Pregúntame sobre cualquier comparación con la competencia. Estoy entrenado con la información de Baxter, Paramount, Arjo, Stryker y Stiegelmeyer.</p>
+        <p>Haz clic en cualquier pregunta o escribe la tuya. Se abrirá Claude con todo el contexto de Linet y la competencia ya cargado — solo escribe tu pregunta.</p>
       </div>
 
-      <div class="suggested-questions">
-        <button class="sq-btn" onclick="askQuestion('¿Qué producto Linet compite con la cama Centrella de Baxter y en qué somos mejores?')">vs Centrella (Baxter)</button>
-        <button class="sq-btn" onclick="askQuestion('¿En qué somos mejores que Paramount en camillas de urgencias?')">vs Paramount camillas</button>
-        <button class="sq-btn" onclick="askQuestion('¿Cómo comparo la AVE2 con la cama de partos Arjo Prioma?')">AVE2 vs Arjo Prioma</button>
-        <button class="sq-btn" onclick="askQuestion('¿Qué argumentos uso si el cliente prefiere Stryker InTouch para su UCI?')">vs Stryker InTouch</button>
-        <button class="sq-btn" onclick="askQuestion('El cliente dice que Stiegelmeyer tiene ingeniería alemana. ¿Cómo respondo?')">vs Stiegelmeyer calidad</button>
-        <button class="sq-btn" onclick="askQuestion('¿Cuál es la carga segura de trabajo (SWL) de la Sprint 100 vs la PK-8000 de Paramount?')">SWL Sprint vs PK-8000</button>
+      <div class="card" style="margin-bottom:16px;">
+        <div class="card-header">
+          <div class="card-title">⚡ Preguntas frecuentes — clic para abrir</div>
+        </div>
+        <div class="suggested-questions" style="margin-bottom:0">
+          <button class="sq-btn" onclick="openClaude('¿Qué producto Linet compite con la cama Centrella Smart+ de Baxter y en qué somos mejores?')">vs Centrella (Baxter)</button>
+          <button class="sq-btn" onclick="openClaude('¿En qué somos mejores que Paramount Bed en camillas de urgencias? Compara Sprint 100 vs PK-8000.')">vs Paramount camillas</button>
+          <button class="sq-btn" onclick="openClaude('¿Cómo comparo la cama de partos AVE2 de Linet con la Arjo Prioma? ¿En qué somos mejores?')">AVE2 vs Arjo Prioma</button>
+          <button class="sq-btn" onclick="openClaude('¿Qué argumentos uso si el cliente prefiere Stryker InTouch para su UCI en lugar de Linet?')">vs Stryker InTouch</button>
+          <button class="sq-btn" onclick="openClaude('El cliente dice que Stiegelmeyer tiene ingeniería alemana y prefiere eso. ¿Cómo respondo y qué ventajas tenemos nosotros?')">vs Stiegelmeyer calidad</button>
+          <button class="sq-btn" onclick="openClaude('¿Cuál es la carga segura de trabajo (SWL) de la Sprint 100 de Linet vs la PK-8000 de Paramount? ¿Cuál es nuestra ventaja?')">SWL Sprint vs PK-8000</button>
+          <button class="sq-btn" onclick="openClaude('¿Qué producto de Linet compite con la Baxter Progressa en UCI y cuáles son nuestras ventajas?')">vs Baxter Progressa</button>
+          <button class="sq-btn" onclick="openClaude('¿Qué argumentos tenemos para vender la Tom 2 vs la cama pediátrica CB-5 de Paramount?')">Tom 2 vs Paramount CB-5</button>
+        </div>
       </div>
 
-      <div class="chat-container">
-        <div class="chat-messages" id="chatMessages">
-          <div class="msg msg-ai">
-            <div class="msg-avatar">🤖</div>
-            <div class="msg-bubble">
-              ¡Hola! Soy tu asistente de inteligencia competitiva. Puedo ayudarte a comparar productos Linet con la competencia, encontrar argumentos de venta, y responder preguntas sobre especificaciones técnicas.<br><br>
-              <strong>Prueba preguntarme:</strong> "¿Qué producto nuestro compite con la Centrella de Baxter?" o "¿En qué somos mejores que Stryker en UCI?"
-            </div>
-          </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">✍️ Escribe tu propia pregunta</div>
         </div>
-        <div class="chat-input-area">
-          <div class="chat-input-row">
-            <textarea class="chat-input" id="chatInput" placeholder="Pregunta sobre competencia, comparaciones o argumentos de venta..." rows="1" onkeydown="handleKeydown(event)" oninput="autoResize(this)"></textarea>
-            <button class="chat-send" id="sendBtn" onclick="sendMessage()">➤</button>
-          </div>
+        <div style="display:flex; gap:10px; align-items:flex-end;">
+          <textarea id="customQuestion" placeholder="Ej: ¿Cómo respondo si el cliente dice que Baxter tiene mejor tecnología en UCI?" 
+            style="flex:1; border:1px solid var(--border); border-radius:10px; padding:10px 14px; font-size:13px; font-family:Inter,sans-serif; resize:none; height:70px; outline:none; color:var(--text);"
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();openClaudeCustom();}"></textarea>
+          <button onclick="openClaudeCustom()" style="background:var(--linet-blue);color:white;border:none;border-radius:10px;padding:0 20px;height:70px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;">
+            Abrir en Claude ➤
+          </button>
+        </div>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:8px;">Se abrirá una nueva pestaña con Claude. Necesitas tener una cuenta gratuita en claude.ai.</p>
+      </div>
+
+      <div class="card" style="background:#F0FDF4; border-color:#BBF7D0;">
+        <div style="font-size:13px; color:#065F46; line-height:1.6;">
+          <strong>💡 ¿Cómo funciona?</strong><br>
+          Al hacer clic, se abre Claude con el contexto completo de Linet y la competencia ya incluido en el prompt. Solo necesitas tener una cuenta gratuita en <strong>claude.ai</strong>. Las respuestas son instantáneas y puedes hacer preguntas de seguimiento libremente.
         </div>
       </div>
+
     </div>
   </div>
 
@@ -1434,182 +1446,48 @@ function setCategory(cat, btn) {
 }
 
 // ============================================================
-// AI CHAT
+// CLAUDE.AI LINK FUNCTIONS
 // ============================================================
-const SYSTEM_PROMPT = `Eres un asistente experto en ventas para Linet, fabricante checo de camas hospitalarias y médicas. Tu trabajo es ayudar al equipo de ventas a comparar productos Linet con la competencia.
 
-PORTAFOLIO LINET (marca: Linet, fabricante: LINET spol. s r.o., República Checa):
-- Sprint 100: Camilla de transporte universal (urgencias). SWL: 320 kg. Altura: 56.5-89 cm. Dim: 211x76 cm. Superficie paciente: 193x66 cm. Trendelenburg: 18°. Anti-Trendelenburg: 18°. Respaldo: 0-90°. Materiales: PP + acero lacado. Colchón: poliuretano 193x66x8cm, resistente líquidos, BS7175. ISO 9001, 14001, 13485.
-- Eleganza 1 / 1 LE: Cama de hospitalización general
-- Essenza 200 / 300 LT: Cama de hospitalización
-- Eleganza 4: Cama UCI / Cuidados Intensivos adaptable
-- Multicare: Cama UCI avanzada
+const CONTEXT = `Eres un asistente experto en ventas para Linet, fabricante checo de camas hospitalarias. Ayuda al equipo de ventas a comparar productos Linet con la competencia con argumentos concretos y datos numéricos.
+
+PORTAFOLIO LINET (fabricante: LINET spol. s r.o., República Checa. Certs: ISO 9001, 14001, 13485):
+- Sprint 100: Camilla urgencias. SWL 320kg. Altura 56.5-89cm. 211x76cm. Sup paciente 193x66cm. Trendelenburg 18°. Respaldo 0-90°. Compatible Rayos X.
+- Eleganza 1/1LE: Hospitalización general
+- Essenza 200/300LT: Hospitalización
+- Eleganza 4: UCI adaptable
+- Multicare: UCI avanzada
 - AVE2: Cama de partos eléctrica
-- Tom 2: Cama pediátrica hospitalaria
-- Sella: Silla multifuncional (hospitalización y geriatría)
-- Pura: Silla multifuncional eléctrica
-- Air2Care 8: Colchón de terapia alterna (anti-escaras activo)
-- HybriMatt 200: Sistema de colchón híbrido
-- Eleganza Classic: Mesita de noche
-CERTIFICACIONES LINET: ISO 9001, ISO 14001, ISO 13485, Certificado de Libre Venta
+- Tom 2: Cama pediátrica
+- Sella/Pura: Silla multifuncional
+- Air2Care 8: Colchón anti-escaras activo (aire alternante)
 
-COMPETIDORES Y SUS PRODUCTOS:
+COMPETIDORES:
+BAXTER/HILL-ROM (EE.UU.): Centrella Smart+ (35+ data points, monitoreo cardiaco/resp continuo, alertas verbales, Obstacle Detect®), Progressa UCI, 900/Acella, Affinity 4, Centuris Pro.
+PARAMOUNT BED (Japón): PK-8000 camilla emergencia SWL 250kg, K6/A5 hospitalización, CB-5 pediátrica (178x104cm, colchón 195x90cm), ALiUS.
+ARJO (Suecia): Prioma Birthing Bed (SWL 200kg, peso máx paciente 135kg, altura 48.5-85cm, long 213cm, Trendelenburg 14°, batería respaldo IPX4).
+STRYKER (EE.UU.): InTouch UCI (SWL 249kg, 228x107cm, altura 40-84cm, pantalla táctil Windows, Zoom Drive, Chaperone), ProCuity, Epic II, Prime Series, ComfortGel (gel sin electricidad, CoreGel sacra).
+STIEGELMEYER (Alemania): Evario One (somier 80x200cm, externas 89.5x214cm, altura 36-80cm, SWL 250kg, cabecero fijo, modular).
 
-BAXTER / HILL-ROM (EE.UU.):
-- Centrella Smart+: Cama hospitalización. 35+ data points monitoreo. Monitoreo continuo frec. cardiaca y respiratoria. Alertas verbales. Detección obstáculos (Obstacle Detect®). Extiende 6 pulgadas.
-- Progressa: UCI avanzada. Smart Bed Technology.
-- 900 / 900 Acella: Hospitalización.
-- Affinity 4: Especialidad.
-- Centuris Pro: Hospitalización.
+VENTAJAS LINET: Sprint 100 SWL 320kg (+28% vs competencia), triple ISO incluyendo 14001 ambiental, origen europeo, portafolio completo (un solo proveedor), sin registro COFEPRIS en camillas.
 
-PARAMOUNT BED (Japón):
-- PK-8000: Camilla de emergencia. SWL: 250 kg. Altura: 56-89 cm. Compatible arco C.
-- K6: Cama hospitalización.
-- A5 Series: Cama hospitalización.
-- CB-5 (CB-58920): Cama pediátrica. Dim: 178.3x103.9 cm. Base colchón: 195x90 cm. Respaldo: 0-75°. Rodillas: 0-45°.
-- ALiUS (KA-H755): Hospitalización 2024.
-- Celenus: Hospitalización.
+Responde en español, con datos numéricos cuando los tengas, máximo 250 palabras, usa viñetas.
 
-ARJO (Suecia):
-- Prioma Birthing Bed: Cama de partos eléctrica. SWL: 200 kg. Peso máx paciente: 135 kg. Peso cama: 160 kg. Altura: 48.5-85 cm. Long cama: 213 cm. Long obstétrica: 158 cm. Ancho: 100 cm. Extensión: 58 cm. Respaldo: 0-70°. Trendelenburg: 14°. Anti-Trendelenburg: 12°. Batería respaldo: 2x12V. IPX4. Actuadores Linak.
+MI PREGUNTA ES: `;
 
-STRYKER (EE.UU.):
-- InTouch (UCI): Modelo 2131/2141 Zoom. SWL: 249 kg. Dim: 228.6x106.7 cm. Altura: 40.6-83.8 cm. Pantalla táctil Windows. iBed Awareness. Chaperone Bed Exit System. Zoom Drive System (motorizado). Connected Hospital Service. Traducción a idiomas.
-- ProCuity: Hospitalización.
-- Epic II: UCI.
-- Prime Series: UCI/hospitalización.
-- ComfortGel: Colchón de gel sin electricidad (CoreGel). Redistribuye presión sacra. Zona talones inclinada. No requiere corriente eléctrica.
-- KK-7500: Especialidad.
-
-STIEGELMEYER (Alemania):
-- Evario One: Cama hospitalización modular. Somier 80x200 cm. Dim externas: 89.5x214 cm. Altura: 36-80 cm (rueda 125mm). SWL: 250 kg. Cabecero fijo (no se mueve al ajustar altura). Múltiples configuraciones protección lateral. "German Engineering".
-
-VENTAJAS CLAVE DE LINET:
-1. SWL 320 kg en Sprint 100 (vs 250 kg Paramount PK-8000)
-2. Triple ISO: 9001 + 14001 + 13485 (ISO 14001 ambiental es diferenciador)
-3. Origen europeo checo con trayectoria internacional
-4. Portafolio completo: un solo proveedor para toda la institución
-5. Sin requisito de registro sanitario COFEPRIS en camillas de transporte
-
-INSTRUCCIONES:
-- Responde SIEMPRE en español
-- Sé concreto y útil para un vendedor en campo
-- Cuando des ventajas, menciona datos numéricos específicos cuando los tengas
-- Cuando el cliente puede tener objeciones, da el argumento de respuesta
-- Si no tienes información suficiente, dilo honestamente y sugiere qué preguntar al fabricante
-- Máximo 250 palabras por respuesta
-- Usa viñetas cuando sea útil para hacer la respuesta scannable`;
-
-let conversationHistory = [];
-
-async function sendMessage() {
-  const input = document.getElementById('chatInput');
-  const sendBtn = document.getElementById('sendBtn');
-  const msg = input.value.trim();
-  if (!msg) return;
-
-  appendMessage('user', msg);
-  input.value = '';
-  input.style.height = 'auto';
-  conversationHistory.push({ role: 'user', content: msg });
-
-  sendBtn.disabled = true;
-  const typingId = appendTyping();
-
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: SYSTEM_PROMPT,
-        messages: conversationHistory
-      })
-    });
-
-    const data = await response.json();
-    removeTyping(typingId);
-
-    const reply = data.content?.[0]?.text || 'Lo siento, no pude obtener una respuesta. Intenta de nuevo.';
-    appendMessage('ai', reply);
-    conversationHistory.push({ role: 'assistant', content: reply });
-
-  } catch (err) {
-    removeTyping(typingId);
-    appendMessage('ai', 'Hubo un error al conectar con el asistente. Verifica tu conexión e intenta nuevamente.');
-  }
-
-  sendBtn.disabled = false;
+function openClaude(pregunta) {
+  const fullPrompt = CONTEXT + pregunta;
+  const url = 'https://claude.ai/new?q=' + encodeURIComponent(fullPrompt);
+  window.open(url, '_blank');
 }
 
-function askQuestion(q) {
-  document.getElementById('chatInput').value = q;
-  sendMessage();
+function openClaudeCustom() {
+  const pregunta = document.getElementById('customQuestion').value.trim();
+  if (!pregunta) return;
+  openClaude(pregunta);
 }
 
-function appendMessage(role, text) {
-  const container = document.getElementById('chatMessages');
-  const div = document.createElement('div');
-  div.className = 'msg msg-' + role;
 
-  const avatar = document.createElement('div');
-  avatar.className = 'msg-avatar';
-  avatar.textContent = role === 'user' ? 'TÚ' : '🤖';
-
-  const bubble = document.createElement('div');
-  bubble.className = 'msg-bubble';
-  
-  // Convert markdown-like formatting
-  const formatted = text
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\n\n/g, '<br><br>')
-    .replace(/\n- /g, '<br>• ')
-    .replace(/\n/g, '<br>');
-  bubble.innerHTML = formatted;
-
-  div.appendChild(avatar);
-  div.appendChild(bubble);
-  container.appendChild(div);
-  container.scrollTop = container.scrollHeight;
-}
-
-function appendTyping() {
-  const container = document.getElementById('chatMessages');
-  const id = 'typing-' + Date.now();
-  const div = document.createElement('div');
-  div.id = id;
-  div.className = 'msg msg-ai';
-  div.innerHTML = `
-    <div class="msg-avatar">🤖</div>
-    <div class="msg-bubble">
-      <div class="typing-indicator">
-        <div class="typing-dot"></div>
-        <div class="typing-dot"></div>
-        <div class="typing-dot"></div>
-      </div>
-    </div>`;
-  container.appendChild(div);
-  container.scrollTop = container.scrollHeight;
-  return id;
-}
-
-function removeTyping(id) {
-  const el = document.getElementById(id);
-  if (el) el.remove();
-}
-
-function handleKeydown(e) {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    sendMessage();
-  }
-}
-
-function autoResize(el) {
-  el.style.height = 'auto';
-  el.style.height = Math.min(el.scrollHeight, 100) + 'px';
-}
 </script>
 </body>
 </html>
